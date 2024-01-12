@@ -1,0 +1,18 @@
+.descricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinza-escuro);
+    gap: 12px;
+}
+
+.descricao h2 {
+    font-size: 60px;
+}
+
+.descricao p {
+    font-size: 20px;
+    color: var(--cinza);
+    width: 100px;
+
+}

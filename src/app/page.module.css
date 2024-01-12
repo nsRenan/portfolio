@@ -1,0 +1,22 @@
+.main h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+  color: var(--verde);
+}
+.main h3 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.main h4 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 66px;
+}
+
+
