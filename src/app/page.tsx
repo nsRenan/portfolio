@@ -1,11 +1,18 @@
 import { Conteiner } from "./components/Conteiner";
 import { Info } from "./components/Info";
-import styles from "./page.module.css";;
-import { Habilidades } from "./components/Habilidades";
+import styles from "./page.module.css";
+import { Sobre } from "./components/Sobre";
+import { Seta } from "./components/Seta";
+import { Carrossel } from "./components/Carrossel";
+import { Trajetoria } from "./components/Trajetoria";
+
+
+
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <section className={styles.section}>
       <Conteiner>
         <div>
           <h4>Olá, me chamo</h4>
@@ -17,9 +24,18 @@ export default function Home() {
           </div>
         </div>
       </Conteiner>
-      <div>
-        <Habilidades/>
+      <div className={styles.seta}>
+      <Seta/>
       </div>
+      <div>
+        <Sobre />
+      </div>
+      </section>
+      <div className={styles.seta}>
+      <Seta/>
+      </div>
+      <Carrossel/>
+      <Trajetoria/>
     </main>
   );
 }

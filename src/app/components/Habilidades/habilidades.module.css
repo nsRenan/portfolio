@@ -1,23 +1,19 @@
-.titulo {
-padding: 30px 50px;
 
-  }
+
+.titulo h3 {
+  color: var(--verde);
+  margin-bottom: 26px;
+  margin-top: 16px;
+}
+
+.icones {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icones svg {
+  width: 30px;
+  height: 30px;
+  margin: 0 8px 8px 0;
   
-  .icones {
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     padding: 5% 15% 15% 15%;
-     margin: 0 3% 0 3%;
-     
-     
-  }
-  
-  .icones svg {
-    width: 120px;
-    height: 120px;
-    padding: 15px;
-    margin:0 3% 3% 0;
-    
-  }
-  
+}

@@ -12,14 +12,13 @@ export function Navbar() {
       <menu className={styles.menu}>
         <Link href="/sobre"> Sobre</Link>
         <Link href="/projetos"> Projetos</Link>
-        <Link href="/habilidades"> Habilidades</Link>
         <Link href="/trajetoria"> Trajetória</Link>
       </menu>
       <div className={styles.menuBotoes}>
-        <Link href="https://www.linkedin.com/in/renan-nobre/">
+        <Link target="_blank" href="https://www.linkedin.com/in/renan-nobre/">
           <SiLinkedin /> Linkedin
         </Link>
-        <Link href="https://github.com/nsRenan">
+        <Link target="_blank" href="https://github.com/nsRenan">
           <SiGithub /> Github
         </Link>
         <button className={styles.contato}>

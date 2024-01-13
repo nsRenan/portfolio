@@ -1,0 +1,15 @@
+.carrossel {
+  width: 100%;
+  padding: 40px 0px;
+  background: linear-gradient(45deg, #111, #1f1f1f);
+}
+
+.carrossel h2 {
+  font-size: 32px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  color: var(--verde);
+  margin-bottom: 26px;
+  padding: 0px 50px;
+}

@@ -5,7 +5,7 @@ export function Habilidades() {
 
   return (
     <section className={styles.titulo}>
-        <h1>Habilidades</h1>
+        <h3>Habilidades</h3>
       <div className={styles.icones}>
         <SiHtml5 color="#F1662A"/> <SiCss3 color="#1572B6"/> <SiGit color="#DE4C36"/> <SiGithub/> <SiVisualstudiocode color="#0065A9"/>  <SiNodedotjs color="#388E3C"/> 
 

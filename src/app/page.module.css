@@ -1,3 +1,6 @@
+.section{
+  margin: 0px 250px;
+}
 .main h1 {
   font-size: 70px;
   margin-bottom: 20px;
@@ -17,6 +20,10 @@
   align-items: center;
   justify-content: center;
   gap: 66px;
+}
+.seta{
+  display: flex;
+  justify-content: center;
 }
 
 

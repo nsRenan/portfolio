@@ -1,0 +1,33 @@
+.sobre {
+    display: flex; 
+    flex-direction: column;
+
+      
+
+}
+.sobreConteiner {
+    display: flex;
+    justify-content: space-between;
+    margin:  0 auto;
+    height: 76vh;
+    padding: 60px;
+
+
+}
+
+.sobre h2 {
+    font-size: 32px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--verde);
+    margin-bottom: 26px;
+
+}
+
+.sobre p {
+    text-align: justify;
+    width: 800px;
+    margin-bottom: 16px;
+
+}
