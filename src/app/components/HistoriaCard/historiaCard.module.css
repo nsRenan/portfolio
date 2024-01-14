@@ -1,0 +1,40 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 20px;
+  width: 380px;
+}
+
+.ano {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--verde);
+  margin: 0px 10px;
+}
+.mes {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--verde);
+  margin: 0px 10px;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: 200;
+  color: #eee5e5;
+}
+
+.descricao {
+  color: var(--cinza);
+  margin: 0px 10px;
+}
+
+.certificado {
+  background: transparent;
+  border-radius: 6%;
+  border: solid 2px var(--cinza);
+  width: 100px;
+  align-self: flex-end;
+  padding: 6px 0px;
+}
