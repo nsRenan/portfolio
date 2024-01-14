@@ -4,7 +4,8 @@ import styles from "./page.module.css";
 import { Sobre } from "./components/Sobre";
 import { Seta } from "./components/Seta";
 import { Carrossel } from "./components/Carrossel";
-import { Trajetoria } from "./components/Trajetoria";
+import Trajetoria from "./components/Trajetoria";
+
 
 
 
