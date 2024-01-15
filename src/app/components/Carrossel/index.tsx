@@ -121,7 +121,7 @@ export function Carrossel() {
         onSlideChange={() => console.log("slide change")}
       >
         {projetos.map(projeto => (
-        <SwiperSlide>
+        <SwiperSlide key={projeto.descricao} >
           <div>
             <ProjetoCard
               ferramentas={projeto.ferramentas}
