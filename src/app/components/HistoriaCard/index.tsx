@@ -24,11 +24,9 @@ export function HistoriaCard({
       </div>
       <p className={styles.descricao}>{descricao}</p>
       {conteudo ? (
-        <button className={styles.certificado}>
-          <Link target="_blank" href={conteudo}>
+          <Link  className={styles.certificado} target="_blank" href={conteudo}>
             Certificado
           </Link>
-        </button>
       ) : null}
     </div>
   );

@@ -32,9 +32,12 @@
 
 .certificado {
   background: transparent;
-  border-radius: 6%;
+  border-radius: 4px;
   border: solid 2px var(--cinza);
   width: 100px;
   align-self: flex-end;
-  padding: 6px 0px;
+  padding: 3px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
