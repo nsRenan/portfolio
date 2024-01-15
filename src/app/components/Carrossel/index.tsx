@@ -51,7 +51,7 @@ interface projetos {
 
 const projetos: projetos[] = [
   {
-    ferramentas: [<SiJavascript />, <SiNodedotjs />, <SiExpress />, <SiJson />],
+    ferramentas: [<SiJavascript key={'javascript'}  />, <SiNodedotjs key={'node'}  />, <SiExpress key={'express'} />],
     descricao: "API Sistema Bancário",
     imagem: apiSistemaBancarioFoto,
     deploy: "oopa",
@@ -59,13 +59,12 @@ const projetos: projetos[] = [
   },
   {
     ferramentas: [
-      <SiJavascript />,
-      <SiNodedotjs />,
-      <SiExpress />,
-      <SiPostgresql />,
-      <SiSwagger />,
-      <SiJest />,
-      <SiJsonwebtokens />,
+      <SiJavascript key={'javascript'} />,
+      <SiNodedotjs key={'node'} />,
+      <SiExpress key={'express'} />,
+      <SiPostgresql key={'postgresql'} />,
+      <SiSwagger key={'swagger'} />,
+      <SiJest key={'jest'} />,
     ],
     descricao: "Ponto de Venda",
     imagem: pontoVendaFoto,
@@ -73,32 +72,31 @@ const projetos: projetos[] = [
     github: "https://github.com/nsRenan/pontodevenda",
   },
   {
-    ferramentas: [<SiJavascript />, <SiReact />, <SiCss3 />, <SiJson />],
+    ferramentas: [<SiJavascript key={'javascript'} />, <SiReact key={'react'} />, <SiCss3 key={'css'} />],
     descricao: "DsList",
     imagem: dsListFoto,
     github: "https://github.com/nsRenan/dslist_frontend",
   },
   {
-    ferramentas: [<SiJavascript />, <SiReact />, <SiJson />, <SiCss3 />],
+    ferramentas: [<SiJavascript key={'javascript'} />, <SiReact key={'react'} />, <SiCss3 key={'css'} />],
     descricao: "Costs",
     imagem: costsFoto,
     github: "https://github.com/nsRenan/projeto-costs-curso-react",
   },
 
   {
-    ferramentas: [<SiJavascript />, <SiReact />, <SiCss3 />, <SiAxios />],
+    ferramentas: [<SiJavascript key={'javascript'} />, <SiReact key={'react'} />, <SiCss3 key={'css'} />],
     descricao: "Bilioteca Virtual",
     imagem: bibliotecaFoto,
     github: "https://github.com/PietroRhyan/biblioteca-a3",
   },
   {
     ferramentas: [
-      <SiTypescript />,
-      <SiReact />,
-      <SiCss3 />,
-      <SiNextdotjs />,
-      <SiSwiper />,
-      <SiEslint />,
+      <SiTypescript key={'typescript'} />,
+      <SiReact key={'react'} />,
+      <SiCss3 key={'css'} />,
+      <SiNextdotjs key={'next'} />,
+      <SiSwiper key={'swiper'} />,
     ],
     descricao: "Portfolio",
     imagem: portfolioFoto,
