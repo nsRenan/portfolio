@@ -2,12 +2,15 @@ import Link from "next/link";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import styles from "./navbar.module.css";
 import { RiMailSendLine } from "react-icons/ri";
+import renanLogo from '/public/imagens/renan-logo.png'
+import Image from "next/image";
+import { BarraLateral } from "../BarraLateral";
 
 export function Navbar() {
   return (
     <header className={styles.main}>
       <div className={styles.nome}>
-        <Link href="/">RENAN<span className={styles.sobrenome}>NOBRE</span></Link>
+        <Link href="/"> <Image width={100} className={styles.logo} src={renanLogo} alt={"logo"} /> </Link>
       </div>
       <menu className={styles.menu}>
         <Link href="/sobre"> Sobre</Link>
@@ -28,6 +31,7 @@ export function Navbar() {
           </a>
         </button>
       </div>
+      <BarraLateral/>
     </header>
   );
 }

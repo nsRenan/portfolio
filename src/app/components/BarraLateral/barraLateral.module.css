@@ -1,0 +1,23 @@
+.barra {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.botao {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--branco);
+}
+.botao svg {
+  font-size: 34px;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 960px) {
+  .barra {
+    display: flex;
+  }
+}
