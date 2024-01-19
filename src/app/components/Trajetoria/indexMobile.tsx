@@ -73,7 +73,7 @@ export default function TrajetoriaMobile() {
         <Image src={timeLine} width={55} className={styles.timeLine} alt={""}/>
       <div className={styles.capsulaTrajetoria}>
         {historias.map((historia) => (
-          <div className={styles.card}>
+          <div key={historia.titulo} className={styles.card}>
             <HistoriaCard
               ano={historia.ano}
               mes={historia.mes}
