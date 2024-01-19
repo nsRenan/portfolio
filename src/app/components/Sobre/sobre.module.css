@@ -1,16 +1,15 @@
 .sobre {
     display: flex; 
-    flex-direction: column;
-
-      
+    flex-direction: column;   
 
 }
 .sobreConteiner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin:  0 auto;
     height: 76vh;
     padding: 60px;
+    align-items: center;
 
 
 }
@@ -28,6 +27,28 @@
 .sobre p {
     text-align: justify;
     width: 800px;
-    margin-bottom: 16px;
+    margin: 16px 10px;
+    color: var(--branco);
 
+}
+@media (max-width: 1450px){
+    .sobre p {
+        width: fit-content;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1150px) {
+    .sobreConteiner {
+        display:  inline;
+    }
+
+    .imagem {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0px;
+    }
+    .imagem img {
+        width: 200px;
+        height: fit-content;
+    }
 }
