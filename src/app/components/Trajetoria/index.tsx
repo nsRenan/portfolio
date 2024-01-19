@@ -16,14 +16,14 @@ export default function Trajetoria() {
             titulo={"Universidade"}
             descricao="Começa o Bacharelado"
           />
-          <div style={{ height: 266 }}></div>
+          <div className={styles.espaco} style={{ height: 260 }}></div>
           <HistoriaCard
             ano={"2022"}
             key={'oop'}
             titulo={"Desbravando a OOP"}
             descricao="Introdução ao OOP"
           />
-          <div style={{ height: 250 }}></div>
+          <div className={styles.espaco} style={{ height: 150 }}></div>
           <HistoriaCard
             ano={"2023"}
             key={'web'}
@@ -33,7 +33,7 @@ export default function Trajetoria() {
         </div>
         <Image src={timeLine} width={55} alt={"timeLine"} />
         <div>
-          <div style={{ height: 50 }}></div>
+          <div className={styles.espaco} style={{ height: 50 }}></div>
           <HistoriaCard
             mes={"Fevereiro"}
             key={'cursoPython'}
@@ -48,7 +48,7 @@ export default function Trajetoria() {
             conteudo="/certificados/certificado_aws.pdf"
             descricao="AWS Cloud Foundation"
           />
-          <div style={{ height: 50 }}></div>
+          <div className={styles.espaco} style={{ height: 80 }}></div>
           <HistoriaCard
             mes={"Março"}
             key={'cursoJava'}
@@ -63,7 +63,7 @@ export default function Trajetoria() {
             conteudo="/certificados/certificado_cisco.pdf"
             descricao="Networking Essentials"
           />
-          <div style={{ height: 50 }}></div>
+          <div className={styles.espaco} style={{ height: 50 }}></div>
           <HistoriaCard
             mes={"Junho"}
             key={"cursoAzure"}
