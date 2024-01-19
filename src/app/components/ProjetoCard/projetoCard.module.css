@@ -13,6 +13,7 @@
     flex-direction: row;
     align-self: center;
     justify-content: center;
+    color: var(--branco);
 }
 .ferramentas  svg {
     margin-left: 6px;
@@ -61,4 +62,13 @@
 
 .cardLinks a:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 870px){
+    .card {
+        width: 340px;
+    }
+    .cardFoto {
+        height: 170px;
+    }
 }

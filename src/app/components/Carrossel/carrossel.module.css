@@ -4,6 +4,11 @@
   background: linear-gradient(45deg, #111, #1f1f1f);
 }
 
+.card {
+  display: flex;
+  justify-content: center;
+}
+
 .carrossel h2 {
   font-size: 32px;
   gap: 8px;
@@ -12,4 +17,8 @@
   color: var(--verde);
   margin-bottom: 26px;
   padding: 0px 50px;
+}
+
+.swiper button {
+  color: var(--verde); /* Cor do texto (opcional) */
 }

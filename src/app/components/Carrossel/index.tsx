@@ -29,16 +29,13 @@ import {
   SiSwagger,
   SiReact,
   SiCss3,
-  SiJson,
   SiJest,
-  SiAxios,
-  SiJsonwebtokens,
   SiTypescript,
   SiNextdotjs,
   SiSwiper,
   SiEslint,
 } from "react-icons/si";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
 
 interface projetos {
@@ -51,20 +48,23 @@ interface projetos {
 
 const projetos: projetos[] = [
   {
-    ferramentas: [<SiJavascript key={'javascript'}  />, <SiNodedotjs key={'node'}  />, <SiExpress key={'express'} />],
+    ferramentas: [
+      <SiJavascript key={"javascript"} />,
+      <SiNodedotjs key={"node"} />,
+      <SiExpress key={"express"} />,
+    ],
     descricao: "API Sistema Bancário",
     imagem: apiSistemaBancarioFoto,
-    deploy: "oopa",
     github: "https://github.com/nsRenan/api-sistema-bancario",
   },
   {
     ferramentas: [
-      <SiJavascript key={'javascript'} />,
-      <SiNodedotjs key={'node'} />,
-      <SiExpress key={'express'} />,
-      <SiPostgresql key={'postgresql'} />,
-      <SiSwagger key={'swagger'} />,
-      <SiJest key={'jest'} />,
+      <SiJavascript key={"javascript"} />,
+      <SiNodedotjs key={"node"} />,
+      <SiExpress key={"express"} />,
+      <SiPostgresql key={"postgresql"} />,
+      <SiSwagger key={"swagger"} />,
+      <SiJest key={"jest"} />,
     ],
     descricao: "Ponto de Venda",
     imagem: pontoVendaFoto,
@@ -72,31 +72,43 @@ const projetos: projetos[] = [
     github: "https://github.com/nsRenan/pontodevenda",
   },
   {
-    ferramentas: [<SiJavascript key={'javascript'} />, <SiReact key={'react'} />, <SiCss3 key={'css'} />],
+    ferramentas: [
+      <SiJavascript key={"javascript"} />,
+      <SiReact key={"react"} />,
+      <SiCss3 key={"css"} />,
+    ],
     descricao: "DsList",
     imagem: dsListFoto,
     github: "https://github.com/nsRenan/dslist_frontend",
   },
   {
-    ferramentas: [<SiJavascript key={'javascript'} />, <SiReact key={'react'} />, <SiCss3 key={'css'} />],
+    ferramentas: [
+      <SiJavascript key={"javascript"} />,
+      <SiReact key={"react"} />,
+      <SiCss3 key={"css"} />,
+    ],
     descricao: "Costs",
     imagem: costsFoto,
     github: "https://github.com/nsRenan/projeto-costs-curso-react",
   },
 
   {
-    ferramentas: [<SiJavascript key={'javascript'} />, <SiReact key={'react'} />, <SiCss3 key={'css'} />],
+    ferramentas: [
+      <SiJavascript key={"javascript"} />,
+      <SiReact key={"react"} />,
+      <SiCss3 key={"css"} />,
+    ],
     descricao: "Bilioteca Virtual",
     imagem: bibliotecaFoto,
     github: "https://github.com/PietroRhyan/biblioteca-a3",
   },
   {
     ferramentas: [
-      <SiTypescript key={'typescript'} />,
-      <SiReact key={'react'} />,
-      <SiCss3 key={'css'} />,
-      <SiNextdotjs key={'next'} />,
-      <SiSwiper key={'swiper'} />,
+      <SiTypescript key={"typescript"} />,
+      <SiReact key={"react"} />,
+      <SiCss3 key={"css"} />,
+      <SiNextdotjs key={"next"} />,
+      <SiSwiper key={"swiper"} />,
     ],
     descricao: "Portfolio",
     imagem: portfolioFoto,
@@ -105,33 +117,67 @@ const projetos: projetos[] = [
 ];
 
 export function Carrossel() {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  let slidesVisiveis = 0;
+  if (windowSize.width <= 1680) {
+    slidesVisiveis = 3;
+  }
+  if (windowSize.width <= 1222) {
+    slidesVisiveis = 2;
+  }
+  if (windowSize.width <= 752) {
+    slidesVisiveis = 1;
+  }
+  if(windowSize.width >= 2100){
+    slidesVisiveis = 5
+  }
+  if(windowSize.width < 2100 && windowSize.width > 1680){
+    slidesVisiveis = 4
+  }
+
   return (
     <div className={styles.carrossel}>
       <h2>Projetos</h2>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={2}
-        slidesPerView={4}
+        slidesPerView={slidesVisiveis}
         navigation
         autoplay={{ delay: 5000 }}
         loop={true}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        className={styles.swiper}
+        
       >
-        {projetos.map(projeto => (
-        <SwiperSlide key={projeto.descricao} >
-          <div>
-            <ProjetoCard
-              ferramentas={projeto.ferramentas}
-              descricao={projeto.descricao}
-              imagem={projeto.imagem}
-              deploy={projeto.deploy}
-              github={projeto.github}
-              key={projeto.descricao}
-            />
-          </div>
-        </SwiperSlide>
-
+        {projetos.map((projeto) => (
+          <SwiperSlide key={projeto.descricao}>
+            <div className={styles.card}>
+              <ProjetoCard
+                ferramentas={projeto.ferramentas}
+                descricao={projeto.descricao}
+                imagem={projeto.imagem}
+                deploy={projeto.deploy}
+                github={projeto.github}
+                key={projeto.descricao}
+              />
+            </div>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>
