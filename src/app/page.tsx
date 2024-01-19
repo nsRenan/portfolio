@@ -5,6 +5,7 @@ import { Sobre } from "./components/Sobre";
 import { Seta } from "./components/Seta";
 import { Carrossel } from "./components/Carrossel";
 import Trajetoria from "./components/Trajetoria";
+import TrajetoriaMobile from "./components/Trajetoria/indexMobile";
 
 export default function Home() {
   return (
@@ -32,7 +33,12 @@ export default function Home() {
         <Seta />
       </div>
       <Carrossel />
-      <Trajetoria />
+      <div className={styles.trajetoria}>
+      <Trajetoria  />
+      </div>
+      <div className={styles.trajetoriaMobile}>
+      <TrajetoriaMobile/>
+      </div>
     </main>
   );
 }
