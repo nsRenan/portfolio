@@ -13,7 +13,7 @@ import {
   SiWordpress,
   SiNextdotjs,
 } from "react-icons/si";
-import pythonSvg from "/public/imagens/pythonSvg.svg";
+import pythonSvg from "/public/pythonSvg.svg";
 import Image from "next/image";
 
 export function Habilidades() {
