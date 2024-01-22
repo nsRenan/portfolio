@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import styles from "./navbar.module.css";
 import { RiMailSendLine } from "react-icons/ri";
-import renanLogo from '/public/imagens/renan-logo.png'
+import renanLogo from '/public/renan-logo.svg'
 import Image from "next/image";
 import { BarraLateral } from "../BarraLateral";
 

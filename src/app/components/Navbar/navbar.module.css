@@ -1,7 +1,7 @@
 .main {
     display: flex;
     justify-content:  space-between;
-    padding: 24px 95px;
+    padding: 12px 24px 95px;
 }
 
 .menu {
@@ -69,10 +69,10 @@
         gap: 20px;
     }
     .main {
-        padding: 24px 65px;
+        padding: 12px 24px 65px;
     }
 }
-@media (max-width: 960px){
+@media (max-width: 900px){
     .menu {
         display:  none;
     }
@@ -81,6 +81,6 @@
     }
 
     .main {
-        padding: 24px 20px;
+        padding: 12px 38px 10px 8px;
     }
 }

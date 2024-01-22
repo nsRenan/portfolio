@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { HistoriaCard } from "../HistoriaCard";
-import styles from "./trajetoriaMobile.module.css";
-import timeLine from "/public/imagens/timeLine.svg";
+import { HistoriaCard } from "../../HistoriaCard";
+import styles from "./trajetoria.module.css";
+import timeLine from "/public/timeLine.svg";
 
 interface historia {
   ano?: string;
