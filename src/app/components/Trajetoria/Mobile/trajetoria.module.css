@@ -5,7 +5,6 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   margin-bottom: 8rem;
-  gap: 150px;
   align-items: center;
 }
 
@@ -19,35 +18,43 @@
   width: fit-content;
 }
 
-.conteinerTrajetoria h1 {
-  font-size: 55px;
+.conteinerTrajetoria h2 {
+  font-size: 50px;
+  color: var(--verde);
 }
 
 
-.conteinerTrajetoria h1 {
+.conteinerTrajetoria h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
 
 @media (max-width: 500px){
-    .conteinerTrajetoria h1 {
-        font-size: 50px;
-    }
-}
-@media (max-width: 425px){
-    .conteinerTrajetoria h1 {
+    .conteinerTrajetoria h2 {
         font-size: 40px;
     }
     .timeLine {
-        width: 53px;
+      width: 52px;
+      height: 880px;
+    }
+    
+}
+@media (max-width: 425px){
+    .conteinerTrajetoria h2 {
+        font-size: 30px;
+    }
+    .timeLine {
+        width: 50px;
+        height: 800px;
     }
 }
 @media (max-width: 376px){
-    .conteinerTrajetoria h1 {
-        font-size: 36px;
+    .conteinerTrajetoria h2 {
+        font-size: 30px;
     }
     .timeLine {
         display: none;
     }
+    
 }

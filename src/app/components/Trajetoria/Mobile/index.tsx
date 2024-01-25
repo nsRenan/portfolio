@@ -68,7 +68,7 @@ const historias: historia[] = [
 export default function TrajetoriaMobile() {
   return (
     <div className={styles.conteinerTrajetoria}>
-      <h1> Minha Trajetória</h1>
+      <h2> Minha Trajetória</h2>
       <div className={styles.formato}>
         <Image src={timeLine} width={55} className={styles.timeLine} alt={""}/>
       <div className={styles.capsulaTrajetoria}>

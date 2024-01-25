@@ -7,7 +7,7 @@ import timeLine from "/public/timeLine.svg";
 export default function Trajetoria() {
   return (
     <div className={styles.conteinerTrajetoria}>
-      <h1> Minha Trajetória</h1>
+      <h2> Minha Trajetória</h2>
       <div className={styles.capsulaTrajetoria}>
         <div className={styles.esquerda}>
           <HistoriaCard

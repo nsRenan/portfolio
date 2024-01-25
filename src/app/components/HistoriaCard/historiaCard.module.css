@@ -66,8 +66,11 @@
     font-weight: 200;
     color: #eee5e5;
   }
+  .descricao {
+    font-size: 14px;
+  }
 }
-@media (max-width: 425px){
+@media (max-width: 500px){
   .card{
     width: 300px;
   }
@@ -88,5 +91,40 @@
     font-size: 18px;
     font-weight: 200;
     color: #eee5e5;
+  }
+  .descricao {
+    font-size: 13.5px;
+  }
+}
+@media (max-width: 425px){
+  .card{
+    width: 300px;
+  }
+  .ano {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--verde);
+    margin: 0px 6px 0px 0px;
+  }
+  .mes {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--verde);
+    margin: 0px 6px 0px 0px;
+  }
+  
+  .titulo {
+    font-size: 15px;
+    font-weight: 200;
+    color: #eee5e5;
+  }
+  .descricao {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 376px){
+  .descricao {
+    margin: 0px;
   }
 }
