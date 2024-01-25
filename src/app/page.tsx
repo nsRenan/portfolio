@@ -25,20 +25,24 @@ export default function Home() {
         <div className={styles.seta}>
           <Seta />
         </div>
-        <div>
+        <section id="sobre">
           <Sobre />
-        </div>
+        </section>
       </section>
       <div className={styles.seta}>
         <Seta />
       </div>
+      <section id="projetos">
       <Carrossel />
+      </section>
+      <section id="trajetoria">
       <div className={styles.trajetoria}>
       <Trajetoria  />
       </div>
       <div className={styles.trajetoriaMobile}>
       <TrajetoriaMobile/>
       </div>
+      </section>
     </main>
   );
 }

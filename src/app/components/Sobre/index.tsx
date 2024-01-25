@@ -1,7 +1,7 @@
 import styles from "./sobre.module.css";
 import { FiChevronsRight } from "react-icons/fi";
 import Image from "next/image";
-import minhaFoto from "/public/imagens/tt.jpg";
+import minhaFoto from "/public/imagens/renanPerfil.png";
 import { Habilidades } from "../Habilidades";
 
 export function Sobre() {

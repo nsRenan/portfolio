@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-evenly;
     margin:  0 auto;
-    height: 76vh;
+    height: 92vh;
     padding: 60px;
     align-items: center;
 
@@ -30,6 +30,21 @@
     margin: 16px 10px;
     color: var(--branco);
 
+}
+
+@keyframes subirDescer {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(16px);
+    }
+  }
+
+.imagem img {
+    border-radius: 10px;
+    box-shadow: 0 0 14px var(--verde); 
+    animation: subirDescer 3s infinite;
 }
 @media (max-width: 1450px){
     .sobre p {
