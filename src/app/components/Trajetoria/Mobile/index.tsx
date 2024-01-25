@@ -14,8 +14,8 @@ interface historia {
 const historias: historia[] = [
   {
     ano: "2021",
-    titulo: "Universidade",
-    descricao: "Começa o Bacharelado",
+    titulo: "Ciência da Computaçao",
+    descricao: "Inicio do Bacharelado",
   },
   {
     mes: "Fevereiro",
@@ -38,7 +38,7 @@ const historias: historia[] = [
   mes: "Março",
   titulo: "Curso JAVA",
   conteudo: "/certificados/certificado_java.pdf",
-  descricao: "Introdução ao OOP em Java",
+  descricao: "Introdução ao Java",
 },
 {
   mes: "Dezembro",
@@ -49,7 +49,7 @@ const historias: historia[] = [
   {
     ano: "2023",
     titulo: "Desenvolvimento Web",
-    descricao: "Estudo Focado em Desenvolvimento Web",
+    descricao: "Estudo voltado ao Desenvolvimento Web",
   },
   {
     mes: "Junho",
@@ -68,7 +68,7 @@ const historias: historia[] = [
 export default function TrajetoriaMobile() {
   return (
     <div className={styles.conteinerTrajetoria}>
-      <h1> Minha Trajetoria</h1>
+      <h1> Minha Trajetória</h1>
       <div className={styles.formato}>
         <Image src={timeLine} width={55} className={styles.timeLine} alt={""}/>
       <div className={styles.capsulaTrajetoria}>

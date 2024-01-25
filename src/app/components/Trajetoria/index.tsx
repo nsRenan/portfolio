@@ -7,14 +7,14 @@ import timeLine from "/public/timeLine.svg";
 export default function Trajetoria() {
   return (
     <div className={styles.conteinerTrajetoria}>
-      <h1> Minha Trajetoria</h1>
+      <h1> Minha Trajetória</h1>
       <div className={styles.capsulaTrajetoria}>
         <div className={styles.esquerda}>
           <HistoriaCard
             ano={"2021"}
             key={'universidade'}
-            titulo={"Universidade"}
-            descricao="Começa o Bacharelado"
+            titulo={"Ciência da Computaçao"}
+            descricao="Inicio do Bacharelado"
           />
           <div className={styles.espaco} style={{ height: 260 }}></div>
           <HistoriaCard
@@ -28,7 +28,7 @@ export default function Trajetoria() {
             ano={"2023"}
             key={'web'}
             titulo={"Desenvolvimento Web"}
-            descricao="Estudo Focado em densenvolvimento web"
+            descricao="Estudo voltado ao densenvolvimento web"
           />
         </div>
         <Image src={timeLine} width={55} alt={"timeLine"} />
@@ -54,7 +54,7 @@ export default function Trajetoria() {
             key={'cursoJava'}
             titulo={"Curso JAVA"}
             conteudo="/certificados/certificado_java.pdf"
-            descricao="Introdução ao OOP em Java"
+            descricao="Introdução ao Java"
           />
           <HistoriaCard
             mes={"Dezembro"}

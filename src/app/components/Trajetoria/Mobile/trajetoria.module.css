@@ -19,6 +19,10 @@
   width: fit-content;
 }
 
+.conteinerTrajetoria h1 {
+  font-size: 55px;
+}
+
 
 .conteinerTrajetoria h1 {
   display: flex;

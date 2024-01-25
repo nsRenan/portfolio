@@ -7,6 +7,7 @@
   padding-right: 1.5rem;
   margin-bottom: 8rem;
   gap: 150px;
+  /* padding: 20px 10px; */
 }
 
 .capsulaTrajetoria {
@@ -25,6 +26,9 @@
 .conteinerTrajetoria{
   flex-direction: column;
   align-items: center;
+}
+.conteinerTrajetoria h1 {
+  font-size: 60px;
 }
 }
 @media (max-width: 950px){
