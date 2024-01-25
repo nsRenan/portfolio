@@ -10,12 +10,12 @@ export function Navbar() {
   return (
     <header className={styles.main}>
       <div className={styles.nome}>
-        <Link href="/"> <Image width={100} className={styles.logo} src={renanLogo} alt={"logo"} /> </Link>
+        <Link href="/"> <Image width={44}  src={renanLogo} alt={"logo"} /> </Link>
       </div>
       <menu className={styles.menu}>
-        <Link href="/sobre"> Sobre</Link>
-        <Link href="/projetos"> Projetos</Link>
-        <Link href="/trajetoria"> Trajetória</Link>
+        <Link href="#sobre"> Sobre</Link>
+        <Link href="#projetos"> Projetos</Link>
+        <Link href="#trajetoria"> Trajetória</Link>
       </menu>
       <div className={styles.menuBotoes}>
         <Link target="_blank" href="https://www.linkedin.com/in/renan-nobre/">
@@ -25,7 +25,7 @@ export function Navbar() {
           <SiGithub /> Github
         </Link>
         <button className={styles.contato}>
-          <a href="mailto:renannprojetos@gmail.com">
+          <a href="mailto:contact.renannobre@gmail.com">
             <RiMailSendLine />
             Contato
           </a>
