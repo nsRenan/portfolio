@@ -1,7 +1,7 @@
 "use client";
+import { Link, animateScroll as scroll, } from "react-scroll/modules";
 import styles from "./barraLateral.module.css";
 import { CgDetailsMore } from "react-icons/cg";
-import Link from "next/link";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { RiMailSendLine } from "react-icons/ri";
 import { ReactElement, useEffect, useState } from "react";
@@ -101,7 +101,13 @@ export function BarraLateral() {
                 <ul className={styles.conteinerMenu}>
                   {menus.map((menu) => (
                     <li key={menu.titulo}>
-                      <Link href={menu.rota}
+                      <Link to={menu.rota}
+                      activeClass="active"
+                      spy={true}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                      style={{ cursor: "pointer" }}
                       onClick={alternarExpansao}
                        className={styles.pagina}>
                         {menu.icon}
@@ -115,20 +121,20 @@ export function BarraLateral() {
               <div className={styles.menuRedes}>
                 <h4 className={styles.titulo}>Redes</h4>
                 <ul className={styles.conteinerMenu}>
-                  <Link
+                  <a
                     className={styles.pagina}
                     target="_blank"
                     href="https://www.linkedin.com/in/renan-nobre/"
                   >
                     <SiLinkedin /> Linkedin
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     className={styles.pagina}
                     target="_blank"
                     href="https://github.com/nsRenan"
                   >
                     <SiGithub /> Github
-                  </Link>
+                  </a>
 
                   <a
                     className={styles.pagina}
