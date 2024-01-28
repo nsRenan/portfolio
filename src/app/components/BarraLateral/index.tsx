@@ -18,17 +18,17 @@ interface menu {
 export const menus: menu[] = [
   {
     titulo: "Sobre",
-    rota: "#sobre",
+    rota: "sobre",
     icon: <FiInfo size={16} />,
   },
   {
     titulo: "Projetos",
-    rota: "#projetos",
+    rota: "projetos",
     icon: <FiBox size={16} />,
   },
   {
     titulo: "Trajetória",
-    rota: "#trajetoria",
+    rota: "trajetoria",
     icon: <TbTimeline  size={16} />,
   }
 ];
