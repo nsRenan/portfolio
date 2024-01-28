@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: space-between;
-  padding: 20px 28px 95px 28px;
+  padding: 12px 28px
 }
 
 .menu {
@@ -67,9 +67,7 @@
   .menu {
     gap: 20px;
   }
-  .main {
-    padding: 12px 24px 65px 24px;
-  }
+
 }
 @media (max-width: 900px) {
   .menu {
@@ -79,7 +77,4 @@
     display: none;
   }
 
-  .main {
-    padding: 12px 20px 10px 20px;
-  }
 }

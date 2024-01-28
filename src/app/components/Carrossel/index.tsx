@@ -136,19 +136,19 @@ export function Carrossel() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   let slidesVisiveis = 0;
-  if (windowSize.width <= 1680) {
+  if (windowSize.width <= 1880) {
     slidesVisiveis = 3;
   }
-  if (windowSize.width <= 1222) {
+  if (windowSize.width <= 1400) {
     slidesVisiveis = 2;
   }
   if (windowSize.width <= 752) {
     slidesVisiveis = 1;
   }
-  if(windowSize.width >= 2100){
+  if(windowSize.width >= 2400){
     slidesVisiveis = 5
   }
-  if(windowSize.width < 2100 && windowSize.width > 1680){
+  if(windowSize.width < 2400 && windowSize.width > 1880){
     slidesVisiveis = 4
   }
 

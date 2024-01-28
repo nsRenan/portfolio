@@ -27,7 +27,7 @@
 .sobre p {
     text-align: justify;
     width: 800px;
-    margin: 16px 10px;
+    margin: 16px 0px;
     color: var(--branco);
 
 }
