@@ -5,14 +5,13 @@ import { Sobre } from "./components/Sobre";
 import { Seta } from "./components/Seta";
 import { Carrossel } from "./components/Carrossel";
 import Trajetoria from "./components/Trajetoria";
-import TrajetoriaMobile from "./components/Trajetoria/Mobile";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.section}>
         <Conteiner>
-          <div>
+          <div className={styles.apresentacao}>
             <h4>Olá, me chamo</h4>
             <h1>Renan Nobre</h1>
             <h3>Desenvolvedor FullStack</h3>
@@ -33,15 +32,10 @@ export default function Home() {
         <Seta />
       </div>
       <section id="projetos">
-      <Carrossel />
+        <Carrossel />
       </section>
       <section id="trajetoria">
-      <div className={styles.trajetoria}>
-      <Trajetoria  />
-      </div>
-      <div className={styles.trajetoriaMobile}>
-      <TrajetoriaMobile/>
-      </div>
+        <Trajetoria />
       </section>
     </main>
   );

@@ -1,41 +1,69 @@
 .conteinerTrajetoria {
-  width: 100vh;
-  display: flex;
-  justify-content: center;
-  margin: 3rem auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-bottom: 8rem;
-  gap: 180px;
-  /* padding: 20px 10px; */
+  margin: 106px 120px;
 }
 
-.conteinerTrajetoria h2 {
-  font-size: 50px;
+.trajetoriaCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 25px;
+  justify-content: space-between;
+}
+
+.titulo {
+  font-size: 32px;
   color: var(--verde);
+  margin-bottom: 40px;
 }
 
-.capsulaTrajetoria {
-  display: flex;
-  justify-content: center;
+@media (max-width: 1520px) {
+  .conteinerTrajetoria {
+    margin: 106px 100px;
+  }
+  .trajetoriaCard {
+    grid-template-columns: repeat(auto-fill, 280px);
+  }
 }
+@media (max-width: 1400px) {
+  .conteinerTrajetoria {
+    margin: 106px 90px;
+  }
+}
+@media (max-width: 764px) {
+  .trajetoriaCard {
+    grid-template-columns: repeat(auto-fill, 260px);
+  }
+  .conteinerTrajetoria {
+    margin: 70px 50px;
+  }
+}
+@media (max-width: 644px) {
 
+  .conteinerTrajetoria {
+    margin: 50px 20px;
+  }
+}
+@media (max-width: 584px) {
+  .trajetoriaCard {
+    grid-template-columns: repeat(auto-fill, 240px);
+  }
 
-.esquerda {
-  display: flex;
-  flex-direction: column;
 }
+@media (max-width: 584px) {
+  .trajetoriaCard {
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+  }
 
+}
+@media (max-width: 310px) {
+  .trajetoriaCard {
+    grid-template-columns: repeat(auto-fill, 260px);
+  }
+  .conteinerTrajetoria{
+    margin: 30px 10px;
+  }
+  .titulo {
+    font-size: 30px;
+  }
 
-@media (max-width: 1300px){
-.conteinerTrajetoria{
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-}
-}
-@media (max-width: 950px){
-.conteinerTrajetoria {
-  width: fit-content;
-}
 }

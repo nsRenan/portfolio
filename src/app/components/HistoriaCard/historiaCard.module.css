@@ -1,130 +1,56 @@
-.card{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px 20px;
-  width: 380px;
+.card {
+  width: fit-content;
 }
 
-.ano {
-  font-size: 30px;
-  font-weight: 500;
+.card h3 {
+  font-size: 28px;
   color: var(--verde);
-  margin: 0px 10px 0px 0px;
-}
-.mes {
-  font-size: 30px;
-  font-weight: 500;
-  color: var(--verde);
-  margin: 0px 10px 0px 0px;
 }
 
-.titulo {
+.card h4 {
   font-size: 24px;
-  font-weight: 200;
-  color: #eee5e5;
+}
+.card ul {
+  list-style: none;
+}
+
+.descricaoCard {
+  margin-bottom: 10px;
 }
 
 .descricao {
   color: var(--cinza);
-  margin: 0px 10px;
+  font-size: 16px;
+  line-height: normal;
+  margin:  18px 0px 0px 0px;
 }
-
-.certificado {
-  background: transparent;
-  border-radius: 4px;
-  border: solid 2px var(--cinza);
-  width: 100px;
-  align-self: flex-end;
-  padding: 3px 0px;
+.botao {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+.certificado {
+  display: flex;
+  width: 86px;
+  height: 26px;
   color: var(--branco);
+  border: solid 1px var(--branco);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
 }
 
-
-@media (max-width: 900px){
-  .card{
-    width: 350px;
-  }
-  .ano {
-    font-size: 25px;
-    font-weight: 500;
-    color: var(--verde);
-    margin: 0px 6px 0px 0px;
-  }
-  .mes {
-    font-size: 25px;
-    font-weight: 500;
-    color: var(--verde);
-    margin: 0px 6px 0px 0px;
-  }
-  
-  .titulo {
-    font-size: 20px;
-    font-weight: 200;
-    color: #eee5e5;
-  }
-  .descricao {
-    font-size: 14px;
-  }
-}
-@media (max-width: 500px){
-  .card{
-    width: 300px;
-  }
-  .ano {
+@media (max-width: 764px) {
+  .card h4 {
     font-size: 22px;
-    font-weight: 500;
-    color: var(--verde);
-    margin: 0px 6px 0px 0px;
-  }
-  .mes {
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--verde);
-    margin: 0px 6px 0px 0px;
-  }
-  
-  .titulo {
-    font-size: 18px;
-    font-weight: 200;
-    color: #eee5e5;
-  }
-  .descricao {
-    font-size: 13.5px;
   }
 }
-@media (max-width: 425px){
-  .card{
-    width: 300px;
-  }
-  .ano {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--verde);
-    margin: 0px 6px 0px 0px;
-  }
-  .mes {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--verde);
-    margin: 0px 6px 0px 0px;
-  }
-  
-  .titulo {
-    font-size: 15px;
-    font-weight: 200;
-    color: #eee5e5;
-  }
-  .descricao {
-    font-size: 13px;
+@media (max-width: 584px) {
+  .card h4 {
+    font-size: 21.5px;
   }
 }
 
-@media (max-width: 376px){
-  .descricao {
-    margin: 0px;
-  }
-}
+
