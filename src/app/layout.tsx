@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Roboto, Courier_Prime } from 'next/font/google'
 import './globals.css'
 import { Navbar } from './components/Navbar'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500', '700']})
@@ -31,7 +32,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${roboto.className} ${courier.variable}`}>
          <Navbar/>
-         {children}</body>
+         {children}
+         <SpeedInsights />
+         </body>
     </html>
   )
 }
