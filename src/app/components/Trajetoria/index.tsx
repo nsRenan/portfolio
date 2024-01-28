@@ -72,7 +72,7 @@ export default function Trajetoria() {
       <h2 className={styles.titulo}> Minha Trajetória</h2>
       <div  className={styles.trajetoriaCard}>
       {momentos.map((trajeto) => (
-        <div className={styles.card}>
+        <div key={trajeto.titulo} className={styles.card}>
           <HistoriaCard
             ano={trajeto.ano}
             titulo={trajeto.titulo}
