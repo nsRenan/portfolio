@@ -3,6 +3,7 @@ import { Roboto, Courier_Prime } from 'next/font/google'
 import './globals.css'
 import { Navbar } from './components/Navbar'
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import { VoltarAoTopoBotao } from './components/VoltarAoTopoBotao';
 
 
@@ -35,6 +36,7 @@ export default function RootLayout({
          <Navbar/>
          <VoltarAoTopoBotao/>
          {children}
+         <Analytics />
          <SpeedInsights />
          </body>
     </html>
