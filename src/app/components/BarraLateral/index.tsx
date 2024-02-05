@@ -138,7 +138,7 @@ export function BarraLateral() {
 
                   <a
                     className={styles.pagina}
-                    href="mailto:renannprojetos@gmail.com"
+                    href="mailto:contact.renannobre@gmail.com"
                   >
                     <RiMailSendLine />
                     Contato

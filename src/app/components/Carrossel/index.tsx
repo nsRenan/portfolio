@@ -112,6 +112,7 @@ const projetos: projetos[] = [
     ],
     descricao: "Portfolio",
     imagem: portfolioFoto,
+    deploy: "https://nsrenan.com",
     github: "https://github.com/nsRenan/portfolio",
   },
 ];
