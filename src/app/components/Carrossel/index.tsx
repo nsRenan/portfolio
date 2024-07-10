@@ -68,7 +68,7 @@ const projetos: projetos[] = [
     ],
     descricao: "Ponto de Venda",
     imagem: pontoVendaFoto,
-    deploy: "https://fair-plum-cow.cyclic.app/api-docs/",
+    deploy: "https://pontodevenda.onrender.com/api-docs/",
     github: "https://github.com/nsRenan/pontodevenda",
   },
   {
