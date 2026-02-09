@@ -1,14 +1,27 @@
+"use client";
 import styles from "./sobre.module.css";
 import { FiChevronsRight } from "react-icons/fi";
 import Image from "next/image";
 import minhaFoto from "/public/imagens/renanPerfil.png";
 import { Habilidades } from "../Habilidades";
+import { useState } from "react";
 
 export function Sobre() {
+  const [fotoExpandida, setFotoExpandida] = useState(false);
+
   return (
     <div className={styles.sobreConteiner}>
       <section className={styles.sobre}>
-        <h2>Sobre mim</h2>
+        <div className={styles.tituloWrapper}>
+          <h2>Sobre mim</h2>
+          <div 
+            className={`${styles.fotoMiniatura} ${fotoExpandida ? styles.expandida : ''}`}
+            onClick={() => setFotoExpandida(!fotoExpandida)}
+            onMouseLeave={() => setFotoExpandida(false)}
+          >
+            <Image src={minhaFoto} alt={"Renan Foto"} width={200} height={200} quality={95} />
+          </div>
+        </div>
 
         <p>
           Olá! Sou desenvolvedor fullstack natural do interior da Bahia. Minha jornada na programação 

@@ -4,9 +4,9 @@
 
 .titulo h3 {
   color: var(--branco);
-  font-size: 24px;
+  font-size: clamp(20px, 2.4vw, 24px);
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: clamp(20px, 2.4vw, 24px);
   letter-spacing: -0.3px;
   position: relative;
   padding-bottom: 12px;
@@ -24,16 +24,18 @@
 
 .icones {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 16px;
-  max-width: fit-content;
+  grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+  gap: clamp(10px, 1.6vw, 16px);
+  max-width: 100%;
 }
 
 .iconWrapper {
   position: relative;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 44px;
+  min-height: 44px;
+  padding: clamp(6px, 0.8vw, 8px);
   background: rgba(22, 51, 51, 0.2);
   border: 1px solid rgba(118, 178, 176, 0.15);
   border-radius: 8px;
@@ -54,7 +56,7 @@
   color: var(--branco);
   padding: 6px 12px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   font-weight: 500;
   white-space: nowrap;
   opacity: 0;
@@ -96,60 +98,18 @@
 }
 
 .iconWrapper svg {
-  width: 24px;
-  height: 24px;
+  width: clamp(20px, 2.4vw, 24px);
+  height: clamp(20px, 2.4vw, 24px);
 }
 
 @media (max-width: 768px) {
-  .titulo h3 {
-    font-size: 22px;
-  }
-
   .icones {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-  }
-
-  .iconWrapper {
-    width: 36px;
-    height: 36px;
-    padding: 7px;
-  }
-
-  .iconWrapper svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .iconWrapper::after {
-    font-size: 11px;
-    padding: 5px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
   }
 }
 
 @media (max-width: 480px) {
-  .titulo h3 {
-    font-size: 20px;
-  }
-
   .icones {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-
-  .iconWrapper {
-    width: 32px;
-    height: 32px;
-    padding: 6px;
-  }
-
-  .iconWrapper svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .iconWrapper::after {
-    font-size: 10px;
-    padding: 4px 8px;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
   }
 }

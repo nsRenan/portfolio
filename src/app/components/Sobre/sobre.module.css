@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: clamp(40px, 5vw, 80px);
     margin: 0 auto;
     min-height: 92vh;
-    padding: 80px 120px;
+    padding: clamp(40px, 8vh, 80px) clamp(20px, 8vw, 120px);
     position: relative;
 }
 
@@ -16,14 +16,25 @@
     flex: 1;
 }
 
+.tituloWrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.fotoMiniatura {
+    display: none;
+}
+
 .sobre h2 {
-    font-size: 38px;
+    font-size: clamp(28px, 4vw, 38px);
     font-weight: 600;
     color: var(--branco);
-    margin-bottom: 32px;
+    margin-bottom: clamp(24px, 3vw, 32px);
     letter-spacing: -1px;
     position: relative;
-    padding-left: 20px;
+    padding-left: clamp(12px, 1.5vw, 20px);
 }
 
 .sobre h2::before {
@@ -32,15 +43,15 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 4px;
-    height: 40px;
+    width: clamp(3px, 0.5vw, 4px);
+    height: clamp(32px, 4vw, 40px);
     background: linear-gradient(180deg, var(--verde) 0%, #5a9a98 100%);
     border-radius: 2px;
 }
 
 .sobre p {
     color: var(--cinza);
-    font-size: 16px;
+    font-size: clamp(14px, 1.6vw, 16px);
     line-height: 1.8;
     margin-bottom: 20px;
     letter-spacing: 0.3px;
@@ -75,6 +86,8 @@
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: grayscale(20%);
+    width: min(300px, 90vw);
+    height: auto;
 }
 
 .imagem:hover img {
@@ -82,74 +95,84 @@
     filter: grayscale(0%);
     box-shadow: 0 24px 64px rgba(118, 178, 176, 0.3);
 }
-@media (max-width: 1450px){
-    .sobreConteiner {
-        padding: 80px 100px;
-        gap: 60px;
-    }
-}
 
-@media (max-width: 1200px) {
+@media (max-width: 968px) {
     .sobreConteiner {
         flex-direction: column;
-        padding: 60px 80px;
-        gap: 48px;
     }
 
     .sobre {
         max-width: 100%;
     }
 
-    .imagem::before {
+    .imagem {
         display: none;
+    }
+
+    .fotoMiniatura {
+        display: block;
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid rgba(118, 178, 176, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        flex-shrink: 0;
+    }
+
+    .fotoMiniatura img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(30%);
+        transition: filter 0.3s ease;
+    }
+
+    .fotoMiniatura.expandida {
+        width: 180px;
+        height: 180px;
+        border-radius: 12px;
+        border-color: var(--verde);
+        box-shadow: 0 8px 24px rgba(118, 178, 176, 0.4);
+        z-index: 10;
+    }
+
+    .fotoMiniatura.expandida img {
+        filter: grayscale(0%);
+    }
+
+    .tituloWrapper {
+        margin-bottom: clamp(24px, 3vw, 32px);
+    }
+
+    .tituloWrapper h2 {
+        margin-bottom: 0;
     }
 }
 
-@media (max-width: 768px) {
-    .sobreConteiner {
-        padding: 50px 40px;
+@media (max-width: 640px) {
+    .fotoMiniatura {
+        width: 44px;
+        height: 44px;
     }
 
-    .sobre h2 {
-        font-size: 32px;
-        padding-left: 16px;
-    }
-
-    .sobre h2::before {
-        height: 36px;
-    }
-
-    .sobre p {
-        font-size: 15px;
-    }
-
-    .imagem img {
-        width: 250px;
-        height: auto;
+    .fotoMiniatura.expandida {
+        width: 160px;
+        height: 160px;
     }
 }
 
 @media (max-width: 480px) {
-    .sobreConteiner {
-        padding: 40px 20px;
+    .fotoMiniatura {
+        width: 40px;
+        height: 40px;
     }
 
-    .sobre h2 {
-        font-size: 28px;
-        padding-left: 12px;
-    }
-
-    .sobre h2::before {
-        height: 32px;
-        width: 3px;
-    }
-
-    .sobre p {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .imagem img {
-        width: 200px;
+    .fotoMiniatura.expandida {
+        width: 140px;
+        height: 140px;
     }
 }

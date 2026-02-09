@@ -1,6 +1,6 @@
 .carrossel {
   width: 100%;
-  padding: 80px 120px;
+  padding: clamp(40px, 6vw, 80px) clamp(30px, 8vw, 120px);
   position: relative;
   background: linear-gradient(180deg, transparent 0%, rgba(22, 51, 51, 0.08) 50%, transparent 100%);
 }
@@ -30,19 +30,19 @@
 .card {
   display: flex;
   justify-content: center; 
-  padding: 20px;
-  margin: 0px 20px;
+  padding: clamp(10px, 2vw, 20px);
+  margin: 0 clamp(10px, 2vw, 20px);
 }
 
 .carrossel h2 {
-  font-size: 38px;
+  font-size: clamp(28px, 3.5vw, 38px);
   font-weight: 600;
   color: var(--branco);
-  margin-bottom: 60px;
+  margin-bottom: clamp(40px, 5vw, 60px);
   text-align: left;
   letter-spacing: -1px;
   position: relative;
-  padding-left: 20px;
+  padding-left: clamp(12px, 1.5vw, 20px);
 }
 
 .carrossel h2::before {
@@ -51,16 +51,16 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 4px;
-  height: 40px;
+  width: clamp(3px, 0.4vw, 4px);
+  height: clamp(32px, 3.5vw, 40px);
   background: linear-gradient(180deg, var(--verde) 0%, #5a9a98 100%);
   border-radius: 2px;
 }
 
 .carrossel :global(.swiper-button-next),
 .carrossel :global(.swiper-button-prev) {
-  width: 50px !important;
-  height: 50px !important;
+  width: clamp(40px, 5vw, 50px) !important;
+  height: clamp(40px, 5vw, 50px) !important;
   background: rgba(22, 51, 51, 0.4) !important;
   border: 1px solid rgba(118, 178, 176, 0.2) !important;
   border-radius: 12px !important;
@@ -71,7 +71,7 @@
 .carrossel :global(.swiper-button-next::after),
 .carrossel :global(.swiper-button-prev::after) {
   color: #76b2b0 !important;
-  font-size: 22px !important;
+  font-size: clamp(18px, 2vw, 22px) !important;
   font-weight: bold !important;
 }
 
@@ -95,39 +95,14 @@
 
 .swiper :global(.swiper-pagination-bullet) {
   background: rgba(118, 178, 176, 0.3);
-  width: 10px;
-  height: 10px;
+  width: clamp(8px, 1vw, 10px);
+  height: clamp(8px, 1vw, 10px);
   opacity: 1;
   transition: all 0.3s ease;
 }
 
 .swiper :global(.swiper-pagination-bullet-active) {
   background: var(--verde);
-  width: 24px;
+  width: clamp(20px, 2.4vw, 24px);
   border-radius: 5px;
-}
-
-@media (max-width: 1024px){
-  .carrossel {
-    padding: 60px 60px;
-  }
-}
-
-@media (max-width: 768px){
-  .carrossel {
-    padding: 40px 30px;
-  }
-  .carrossel h2 {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 400px){
-  .card{
-    margin: 10px 10px;
-    padding: 10px;
-  }
-  .carrossel h2 {
-    font-size: 28px;
-  }
 }

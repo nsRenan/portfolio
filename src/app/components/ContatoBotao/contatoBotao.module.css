@@ -73,6 +73,10 @@
     height: 56px;
   }
   
+  .botao:hover {
+    width: 220px;
+  }
+  
   .botao svg {
     font-size: 24px;
   }
@@ -89,7 +93,47 @@
     height: 44px;
   }
   
+  .botao:hover {
+    width: 180px;
+  }
+  
+  .botao:hover .texto {
+    max-width: 140px;
+  }
+  
   .botao svg {
     font-size: 18px;
+  }
+  
+  .texto {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .botaoDiv {
+    bottom: 68px;
+    right: 16px;
+  }
+  
+  .botao {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .botao:hover {
+    width: 160px;
+  }
+  
+  .botao:hover .texto {
+    max-width: 120px;
+  }
+  
+  .botao svg {
+    font-size: 16px;
+  }
+  
+  .texto {
+    font-size: 12px;
   }
 }

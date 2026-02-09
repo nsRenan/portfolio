@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 120px;
+  padding: clamp(50px, 8vh, 80px) clamp(20px, 8vw, 120px);
   position: relative;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@
 
 .greeting {
   display: inline-block;
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   color: var(--cinza);
   margin-bottom: 16px;
   letter-spacing: 1px;
@@ -30,12 +30,12 @@
 }
 
 .name {
-  font-size: 72px;
+  font-size: clamp(36px, 6vw, 72px);
   font-weight: 700;
   color: var(--branco);
   margin-bottom: 16px;
   line-height: 1.1;
-  letter-spacing: -2px;
+  letter-spacing: clamp(-1px, -0.2vw, -2px);
   animation: fadeInUp 0.6s ease-out 0.1s backwards;
 }
 
@@ -47,11 +47,11 @@
 }
 
 .role {
-  font-size: 42px;
+  font-size: clamp(24px, 4vw, 42px);
   font-weight: 600;
   color: var(--branco);
-  margin-bottom: 24px;
-  letter-spacing: -1px;
+  margin-bottom: clamp(16px, 2vw, 24px);
+  letter-spacing: clamp(-0.5px, -0.1vw, -1px);
   animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
@@ -60,18 +60,19 @@
 }
 
 .description {
-  font-size: 18px;
+  font-size: clamp(15px, 1.8vw, 18px);
   color: var(--cinza);
   line-height: 1.6;
-  margin-bottom: 48px;
+  margin-bottom: clamp(32px, 4vw, 48px);
   max-width: 600px;
   animation: fadeInUp 0.6s ease-out 0.3s backwards;
 }
 
 .stats {
   display: flex;
-  gap: 64px;
+  gap: clamp(32px, 5vw, 64px);
   animation: fadeInUp 0.6s ease-out 0.4s backwards;
+  flex-wrap: wrap;
 }
 
 @keyframes fadeInUp {
@@ -106,8 +107,8 @@
 }
 
 .circle1 {
-  width: 600px;
-  height: 600px;
+  width: clamp(300px, 40vw, 600px);
+  height: clamp(300px, 40vw, 600px);
   background: linear-gradient(135deg, var(--verde) 0%, #5a9a98 100%);
   top: -200px;
   right: -200px;
@@ -115,8 +116,8 @@
 }
 
 .circle2 {
-  width: 400px;
-  height: 400px;
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
   background: linear-gradient(135deg, #5a9a98 0%, var(--verde) 100%);
   bottom: -100px;
   right: 100px;
@@ -124,8 +125,8 @@
 }
 
 .circle3 {
-  width: 300px;
-  height: 300px;
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
   background: var(--verde);
   top: 50%;
   right: -50px;
@@ -142,23 +143,9 @@
 }
 
 /* Responsivo */
-@media (max-width: 1400px) {
+@media (max-width: 768px) {
   .heroSection {
-    padding: 80px 100px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .heroSection {
-    padding: 80px 80px;
-  }
-
-  .name {
-    font-size: 64px;
-  }
-
-  .role {
-    font-size: 38px;
+    min-height: 90vh;
   }
 
   .decorative {
@@ -166,89 +153,20 @@
   }
 }
 
-@media (max-width: 768px) {
-  .heroSection {
-    padding: 60px 50px;
-    min-height: 90vh;
-  }
-
-  .name {
-    font-size: 56px;
-  }
-
-  .role {
-    font-size: 32px;
-  }
-
-  .description {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-
-  .stats {
-    gap: 48px;
-  }
-
-  .circle1 {
-    width: 400px;
-    height: 400px;
-  }
-
-  .circle2 {
-    width: 300px;
-    height: 300px;
-  }
-
-  .circle3 {
-    width: 200px;
-    height: 200px;
-  }
-}
-
 @media (max-width: 480px) {
-  .heroSection {
-    padding: 50px 20px;
-  }
-
-  .greeting {
-    font-size: 16px;
-  }
-
-  .name {
-    font-size: 48px;
-    letter-spacing: -1px;
-  }
-
-  .role {
-    font-size: 28px;
-  }
-
-  .description {
-    font-size: 15px;
-    margin-bottom: 36px;
-  }
-
-  .stats {
-    gap: 32px;
-  }
-
-  .decorative {
-    display: none;
-  }
-}
-
-@media (max-width: 360px) {
-  .name {
-    font-size: 42px;
-  }
-
-  .role {
-    font-size: 24px;
-  }
-
   .stats {
     flex-direction: column;
     gap: 24px;
     align-items: flex-start;
+  }
+
+  .decorative {
+    opacity: 0.3;
+  }
+  
+  .circle1,
+  .circle2,
+  .circle3 {
+    opacity: 0.02;
   }
 }
