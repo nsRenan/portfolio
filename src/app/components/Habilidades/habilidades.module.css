@@ -23,9 +23,10 @@
 }
 
 .icones {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   gap: 16px;
+  max-width: fit-content;
 }
 
 .iconWrapper {
@@ -105,6 +106,7 @@
   }
 
   .icones {
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
   }
 
@@ -131,6 +133,7 @@
   }
 
   .icones {
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
 
