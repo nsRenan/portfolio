@@ -11,16 +11,15 @@ export function Sobre() {
         <h2>Sobre mim</h2>
 
         <p>
-          Olá, sou natural do interior da Bahia e minha paixão pela programação
-          começou durante o ensino médio, quando descobri o fascinante mundo do
-          Python. Foi nesse momento que decidi dedicar-me integralmente a essa
-          área promissora.
+          Olá! Sou desenvolvedor fullstack natural do interior da Bahia. Minha jornada na programação 
+          começou durante o ensino médio, quando descobri o fascinante mundo do Python. Desde então, 
+          tenho me dedicado integralmente a construir uma carreira sólida nesta área que tanto me apaixona.
         </p>
         <p>
-          Atualmente, estou imerso no curso de Ciências da Computação na
-          renomada Universidade AGES, onde aprofundo meus conhecimentos e
-          aprimoro minhas habilidades. Paralelamente, atuo como freelancer,
-          aplicando minha expertise em projetos diversos.
+          Atualmente, atuo como desenvolvedor na huboo.ai, uma startup inovadora focada em soluções 
+          de inteligência artificial, onde trabalho com tecnologias modernas como Nuxt 4, Vue.js e Tailwind CSS. 
+          Sou bacharel em Ciências da Computação pela Universidade AGES, formação que me proporcionou 
+          uma base sólida e estruturada para atuar profissionalmente no desenvolvimento de software.
         </p>
         <Habilidades />
       </section>
