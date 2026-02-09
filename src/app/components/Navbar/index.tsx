@@ -6,6 +6,7 @@ import { RiMailSendLine } from "react-icons/ri";
 import renanLogo from "/public/renan-logo.svg";
 import Image from "next/image";
 import { BarraLateral } from "../BarraLateral";
+import ThemeToggle from "../ThemeToggle";
 
 export function Navbar() {
   const scrollToTop = () => {
@@ -24,7 +25,7 @@ export function Navbar() {
           to="sobre"
           spy={true}
           smooth={true}
-          offset={50}
+          offset={-80}
           duration={500}
           style={{ cursor: "pointer" }}
         >
@@ -35,7 +36,7 @@ export function Navbar() {
           to="projetos"
           spy={true}
           smooth={true}
-          offset={50}
+          offset={-80}
           duration={500}
           style={{ cursor: "pointer" }}
         >
@@ -46,7 +47,7 @@ export function Navbar() {
           to="trajetoria"
           spy={true}
           smooth={true}
-          offset={50}
+          offset={-80}
           duration={500}
           style={{ cursor: "pointer" }}
         >
@@ -54,18 +55,25 @@ export function Navbar() {
         </Link>
       </menu>
       <div className={styles.menuBotoes}>
+        <ThemeToggle />
         <a target="_blank" href="https://www.linkedin.com/in/renan-nobre/">
           <SiLinkedin /> Linkedin
         </a>
         <a target="_blank" href="https://github.com/nsRenan">
           <SiGithub /> Github
         </a>
-        <button className={styles.contato}>
-          <a href="mailto:contact.renannobre@gmail.com">
-            <RiMailSendLine />
-            Contato
-          </a>
-        </button>
+        <Link
+          to="contato"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+          className={styles.contato}
+          style={{ cursor: "pointer" }}
+        >
+          <RiMailSendLine />
+          Contato
+        </Link>
       </div>
       <BarraLateral />
     </header>

@@ -1,69 +1,178 @@
-.sobre {
-    display: flex; 
-    flex-direction: column;   
-
-}
 .sobreConteiner {
     display: flex;
-    justify-content: space-evenly;
-    margin:  0 auto;
-    height: 92vh;
-    padding: 60px;
+    justify-content: center;
     align-items: center;
+    gap: clamp(40px, 5vw, 80px);
+    margin: 0 auto;
+    min-height: 92vh;
+    padding: clamp(40px, 8vh, 80px) clamp(20px, 8vw, 120px);
+    position: relative;
+}
 
+.sobre {
+    display: flex; 
+    flex-direction: column;
+    max-width: 700px;
+    flex: 1;
+}
 
+.tituloWrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.fotoMiniatura {
+    display: none;
 }
 
 .sobre h2 {
-    font-size: 32px;
-    gap: 8px;
-    display: flex;
-    align-items: center;
-    color: var(--verde);
-    margin-bottom: 26px;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: clamp(24px, 3vw, 32px);
+    letter-spacing: -1px;
+    position: relative;
+    padding-left: clamp(12px, 1.5vw, 20px);
+}
 
+.sobre h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(3px, 0.5vw, 4px);
+    height: clamp(32px, 4vw, 40px);
+    background: linear-gradient(180deg, var(--verde) 0%, #5a9a98 100%);
+    border-radius: 2px;
 }
 
 .sobre p {
-    text-align: justify;
-    width: 800px;
-    margin: 16px 0px;
-    color: var(--branco);
-
+    color: var(--cinza);
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+    text-align: left;
 }
 
-@keyframes subirDescer {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(16px);
-    }
-  }
+.sobre p:last-of-type {
+    margin-bottom: 32px;
+}
+
+.imagem {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.imagem::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px solid var(--border-hover);
+    border-radius: 16px;
+    z-index: 0;
+}
 
 .imagem img {
-    border-radius: 10px;
-    box-shadow: 0 0 14px var(--verde); 
-    animation: subirDescer 3s infinite;
-}
-@media (max-width: 1450px){
-    .sobre p {
-        width: fit-content;
-    }
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px var(--shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: grayscale(20%);
+    width: min(300px, 90vw);
+    height: auto;
 }
 
-@media (orientation: portrait) or (max-width: 1150px) {
+.imagem:hover img {
+    transform: translate(8px, -8px);
+    filter: grayscale(0%);
+    box-shadow: 0 24px 64px var(--border-hover);
+}
+
+@media (max-width: 968px) {
     .sobreConteiner {
-        display:  inline;
+        flex-direction: column;
+    }
+
+    .sobre {
+        max-width: 100%;
     }
 
     .imagem {
-        display: flex;
-        justify-content: center;
-        margin: 10px 0px;
+        display: none;
     }
-    .imagem img {
-        width: 200px;
-        height: fit-content;
+
+    .fotoMiniatura {
+        display: block;
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid rgba(118, 178, 176, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        flex-shrink: 0;
+    }
+
+    .fotoMiniatura img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(30%);
+        transition: filter 0.3s ease;
+    }
+
+    .fotoMiniatura.expandida {
+        width: 180px;
+        height: 180px;
+        border-radius: 12px;
+        border-color: var(--verde);
+        box-shadow: 0 8px 24px rgba(118, 178, 176, 0.4);
+        z-index: 10;
+    }
+
+    .fotoMiniatura.expandida img {
+        filter: grayscale(0%);
+    }
+
+    .tituloWrapper {
+        margin-bottom: clamp(24px, 3vw, 32px);
+    }
+
+    .tituloWrapper h2 {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .fotoMiniatura {
+        width: 44px;
+        height: 44px;
+    }
+
+    .fotoMiniatura.expandida {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotoMiniatura {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fotoMiniatura.expandida {
+        width: 140px;
+        height: 140px;
     }
 }

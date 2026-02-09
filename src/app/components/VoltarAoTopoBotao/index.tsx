@@ -35,6 +35,7 @@ export function VoltarAoTopoBotao() {
   return (
     <div className={styles.botaoDiv}>
       <button onClick={scrollParaTopo} className={styles.botao}>
+        <span className={styles.texto}>Voltar ao Topo</span>
         <FiArrowUp size={24} />
       </button>
     </div>

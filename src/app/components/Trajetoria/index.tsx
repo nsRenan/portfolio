@@ -1,4 +1,7 @@
-import { HistoriaCard } from "../HistoriaCard";
+'use client';
+
+import { useState } from "react";
+import { TrajetoriaModal } from "../TrajetoriaModal";
 import styles from "./trajetoria.module.css";
 
 const momentos = [
@@ -23,7 +26,7 @@ const momentos = [
   },
   {
     ano: "2022",
-    titulo: "Desbravando ao OOP",
+    titulo: "Desbravando OOP",
     descricao: [
       {
         descricao: "Em março de 2022, iniciei um estudo dedicado às linguagens de programação orientadas a objetos (OOP), com ênfase especial em Java. Nesse período, mergulhei profundamente nos conceitos fundamentais da OOP, explorando as características e a sintaxe específicas de Java.",
@@ -47,6 +50,10 @@ const momentos = [
         certificado: "/certificados/certificado_azure.pdf"
       },
       {
+        descricao: "Em julho, concluí com êxito a disciplina 'Modelos, métodos e técnicas da engenharia de software' com carga horária de 160 horas no Centro Universitário AGES, obtendo certificação em Qualificação Profissional em Modelos Métodos e Técnicas da Engenharia de Software.",
+        certificado: "/certificados/certificado_engenharia_software.pdf"
+      },
+      {
         descricao: "Em dezembro deste ano, finalizei um curso intensivo de 500 horas focado no desenvolvimento de software backend utilizando Node.js. Aprendi habilidades essenciais para criar APIs, manipular bancos de dados e implementar lógica de negócios no servidor.",
         certificado: "/certificados/certificado_cubos.pdf"
       },
@@ -54,34 +61,91 @@ const momentos = [
   },
   {
     ano: "2024",
-    titulo: "Desenvolvimento Web",
+    titulo: "Desenvolvimento Web Moderno",
     descricao: [
       {
-        descricao: "Em 2024, tenho priorizado meu estudo em JavaScript, dedicando tempo para explorar suas bibliotecas e frameworks. Estou empenhado em aprofundar meu conhecimento e habilidades nessa linguagem versátil e em constante evolução."
+        descricao: "Aprofundei conhecimentos em TypeScript e Next.js, desenvolvendo meu primeiro portfólio pessoal com foco em frontend moderno. Dominei conceitos avançados do React como hooks personalizados, Context API, gerenciamento de estado e otimização de performance, criando interfaces responsivas e elegantes."
       },
       {
-        descricao: "Em janeiro, dediquei-me a aprender TypeScript e a utilizar o framework Next.js para desenvolver meu primeiro portfólio. Essa experiência proporcionou-me a oportunidade de explorar as vantagens do TypeScript e aplicar os recursos avançados do Next.js na criação de uma aplicação web robusta e dinâmica."
+        descricao: "No backend, aprimorei habilidades com Node.js e Express, implementando arquiteturas RESTful, autenticação JWT, integração com PostgreSQL e MongoDB, além de práticas de segurança. No frontend, explorei CSS moderno com Tailwind CSS, CSS Modules e Styled Components, aplicando princípios de design system e acessibilidade."
+      },
+      {
+        descricao: "Em julho, concluí com êxito a disciplina 'Análise de dados e big data' com carga horária de 160 horas no Centro Universitário AGES, obtendo certificação em Qualificação Profissional em Análise de Dados.",
+        certificado: "/certificados/certificado_big_data.pdf"
+      }
+    ]
+  },
+  {
+    ano: "2025",
+    titulo: "Crescimento Profissional",
+    descricao: [
+      {
+        descricao: "Expandi conhecimento para o ecossistema Vue.js e Nuxt, explorando composição API, server-side rendering e geração de sites estáticos. Aprofundei em arquitetura de software, padrões de design, clean code e otimização de performance web."
+      },
+      {
+        descricao: "Em julho, concluí minha graduação em Ciências da Computação pela Universidade AGES. Quatro anos de intenso aprendizado consolidaram uma base sólida em algoritmos, estruturas de dados e engenharia de software, complementando perfeitamente minha experiência prática.",
+        certificado: "/certificados/diploma_ciencia_computacao.pdf"
+      },
+      {
+        descricao: "Em agosto, conquistei minha primeira oportunidade como desenvolvedor profissional na huboo.ai, startup focada em soluções de IA. Trabalho com Nuxt 4, Tailwind CSS e frameworks modernos, aplicando conhecimento em projetos reais e colaborando com desenvolvedores experientes.",
+        certificado: "https://huboo.ai/"
       }
     ]
   },
 ];
 
+
+interface MomentoSelecionado {
+  ano: string;
+  titulo: string;
+  descricao: { descricao: string; certificado?: string }[];
+}
+
 export default function Trajetoria() {
+  const [modalAberto, setModalAberto] = useState(false);
+  const [momentoSelecionado, setMomentoSelecionado] = useState<MomentoSelecionado | null>(null);
+
+  const abrirModal = (momento: MomentoSelecionado) => {
+    setMomentoSelecionado(momento);
+    setModalAberto(true);
+  };
+
+  const fecharModal = () => {
+    setModalAberto(false);
+    setTimeout(() => setMomentoSelecionado(null), 300);
+  };
+
   return (
     <div className={styles.conteinerTrajetoria}>
-      <h2 className={styles.titulo}> Minha Trajetória</h2>
-      <div  className={styles.trajetoriaCard}>
-      {momentos.map((trajeto) => (
-        <div key={trajeto.titulo} className={styles.card}>
-          <HistoriaCard
-            ano={trajeto.ano}
-            titulo={trajeto.titulo}
-            descricao={trajeto.descricao}
-            key={trajeto.titulo}
-          />
-        </div>
-      ))}
+      <h2 className={styles.titulo}>Minha Trajetória</h2>
+      <div className={styles.trajetoriaGrid}>
+        {momentos.map((trajeto) => (
+          <div 
+            key={trajeto.ano} 
+            className={styles.card}
+            onClick={() => abrirModal(trajeto)}
+          >
+            <span className={styles.ano}>{trajeto.ano}</span>
+            <h3 className={styles.cardTitulo}>{trajeto.titulo}</h3>
+            <p className={styles.preview}>
+              {trajeto.descricao.length} {trajeto.descricao.length === 1 ? 'marco' : 'marcos'}
+            </p>
+            <div className={styles.verMais}>
+              Ver detalhes →
+            </div>
+          </div>
+        ))}
       </div>
-      </div>
+
+      {momentoSelecionado && (
+        <TrajetoriaModal
+          isOpen={modalAberto}
+          onClose={fecharModal}
+          ano={momentoSelecionado.ano}
+          titulo={momentoSelecionado.titulo}
+          descricao={momentoSelecionado.descricao}
+        />
+      )}
+    </div>
   );
 }

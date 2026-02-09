@@ -1,15 +1,88 @@
 .footer {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    height: 50px;
-    background: linear-gradient(1deg, #101010, #1f1f1f);
+    background: var(--background-secondary);
+    border-top: 1px solid var(--border);
+    padding: clamp(30px, 5vh, 60px) clamp(20px, 8vw, 120px) clamp(20px, 3vh, 40px);
+    position: relative;
 }
 
-.footer p {
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(40px, 5vw, 60px);
+}
+
+.info h3 {
+    font-size: clamp(20px, 2.4vw, 24px);
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.info p {
     color: var(--cinza);
-    font-size: 12px;
+    font-size: clamp(13px, 1.4vw, 14px);
+    line-height: 1.6;
+}
+
+.copy {
+    margin-top: 24px;
+    font-size: clamp(11px, 1.2vw, 12px) !important;
+    opacity: 0.7;
+}
+
+.links h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 16px;
+}
+
+.socialLinks a {
+    width: clamp(40px, 4.4vw, 44px);
+    height: clamp(40px, 4.4vw, 44px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-hover);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--verde);
+    font-size: clamp(18px, 2vw, 20px);
+    transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+    background: var(--surface);
+    border-color: var(--verde);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px var(--border-hover);
+}
+
+@media (max-width: 640px) {
+    .content {
+        flex-direction: column;
+    }
 }

@@ -1,6 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ProjetoCard } from "../ProjetoCard";
+import { ProjetoModal } from "../ProjetoModal";
 import styles from "./carrossel.module.css";
 import {
   Navigation,
@@ -123,6 +124,9 @@ export function Carrossel() {
     height: 0,
   });
 
+  const [modalAberto, setModalAberto] = useState(false);
+  const [projetoSelecionado, setProjetoSelecionado] = useState<projetos | null>(null);
+
   useEffect(() => {
     function handleResize() {
       setWindowSize({
@@ -136,6 +140,17 @@ export function Carrossel() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const abrirModal = (projeto: projetos) => {
+    setProjetoSelecionado(projeto);
+    setModalAberto(true);
+  };
+
+  const fecharModal = () => {
+    setModalAberto(false);
+    setProjetoSelecionado(null);
+  };
+
   let slidesVisiveis = 0;
   if (windowSize.width <= 1880) {
     slidesVisiveis = 3;
@@ -175,12 +190,25 @@ export function Carrossel() {
                 imagem={projeto.imagem}
                 deploy={projeto.deploy}
                 github={projeto.github}
+                onClick={() => abrirModal(projeto)}
                 key={projeto.descricao}
               />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {projetoSelecionado && (
+        <ProjetoModal
+          isOpen={modalAberto}
+          onClose={fecharModal}
+          descricao={projetoSelecionado.descricao}
+          imagem={projetoSelecionado.imagem}
+          ferramentas={projetoSelecionado.ferramentas}
+          github={projetoSelecionado.github}
+          deploy={projetoSelecionado.deploy}
+        />
+      )}
     </div>
   );
 }

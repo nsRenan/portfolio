@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import styles from "./projetoCard.module.css";
-import { ReactElement, ReactSVGElement } from "react";
+import { ReactElement } from "react";
 
 interface projetoCardProps {
   github: string;
@@ -9,37 +8,28 @@ interface projetoCardProps {
   imagem: StaticImageData;
   descricao: string;
   ferramentas: ReactElement[];
+  onClick: () => void;
 }
 
 export function ProjetoCard({
   descricao,
-  github,
   imagem,
-  deploy,
   ferramentas,
+  onClick,
 }: projetoCardProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={onClick}>
       <div className={styles.cardFoto}>
         <Image src={imagem} objectFit="cover" fill alt="Imagem do Projeto" />
       </div>
       <div className={styles.cardInfo}>
         <p>{descricao}</p>
         <div className={styles.ferramentas}>
-        {Array.from(ferramentas).map((element) => (
-           element
-        ))}
+          {Array.from(ferramentas).map((element, index) => (
+            <span key={index}>{element}</span>
+          ))}
         </div>
-        <div className={styles.cardLinks}>
-          <Link target="_blank" href={github}>
-            Github
-          </Link>
-          {deploy ? (
-            <Link target="_blank" href={deploy}>
-              Deploy
-            </Link>
-          ) : null}
-        </div>
+        <span className={styles.verMais}>Clique para ver detalhes</span>
       </div>
     </div>
   );

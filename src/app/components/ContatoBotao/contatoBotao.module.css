@@ -1,7 +1,7 @@
 .botaoDiv {
   position: fixed;
   z-index: 100;
-  bottom: 32px; 
+  bottom: 96px; 
   right: 32px; 
   animation: fadeIn 0.3s ease;
 }
@@ -44,7 +44,7 @@
 }
 
 .botao:hover {
-  width: 180px;
+  width: 200px;
   justify-content: flex-end;
   gap: 12px;
   padding: 0 14px;
@@ -54,18 +54,17 @@
 }
 
 .botao:hover .texto {
-  max-width: 150px;
+  max-width: 170px;
   opacity: 1;
 }
 
 .botao svg {
-  font-size: 20px;
   flex-shrink: 0;
 }
 
 @media (min-width: 1700px) {
   .botaoDiv {
-    bottom: 48px;
+    bottom: 120px;
     right: 48px;
   }
   
@@ -75,7 +74,7 @@
   }
   
   .botao:hover {
-    width: 200px;
+    width: 220px;
   }
   
   .botao svg {
@@ -85,7 +84,7 @@
 
 @media (max-width: 768px) {
   .botaoDiv {
-    bottom: 20px;
+    bottom: 76px;
     right: 20px;
   }
   
@@ -95,11 +94,11 @@
   }
   
   .botao:hover {
-    width: 160px;
+    width: 180px;
   }
   
   .botao:hover .texto {
-    max-width: 120px;
+    max-width: 140px;
   }
   
   .botao svg {
@@ -113,7 +112,7 @@
 
 @media (max-width: 480px) {
   .botaoDiv {
-    bottom: 16px;
+    bottom: 68px;
     right: 16px;
   }
   
@@ -123,11 +122,11 @@
   }
   
   .botao:hover {
-    width: 140px;
+    width: 160px;
   }
   
   .botao:hover .texto {
-    max-width: 100px;
+    max-width: 120px;
   }
   
   .botao svg {

@@ -1,0 +1,88 @@
+.toggleButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  width: clamp(56px, 6vw, 64px);
+  height: clamp(28px, 3.2vw, 32px);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 100px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.track.light {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+}
+
+.track.dark {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.thumb {
+  width: clamp(20px, 2.4vw, 24px);
+  height: clamp(20px, 2.4vw, 24px);
+  background: var(--verde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.track.light .thumb {
+  transform: translateX(calc(clamp(56px, 6vw, 64px) - clamp(20px, 2.4vw, 24px) - 8px));
+}
+
+.track.dark .thumb {
+  transform: translateX(2px);
+}
+
+.icon {
+  width: clamp(12px, 1.4vw, 14px);
+  height: clamp(12px, 1.4vw, 14px);
+  color: white;
+}
+
+.toggleButton:hover .track {
+  border-color: var(--verde);
+  transform: scale(1.05);
+}
+
+.toggleButton:active .track {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .track {
+    width: 56px;
+    height: 28px;
+  }
+  
+  .thumb {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .track.light .thumb {
+    transform: translateX(28px);
+  }
+  
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+}
