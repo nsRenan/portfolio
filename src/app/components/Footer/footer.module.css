@@ -1,15 +1,109 @@
 .footer {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    height: 50px;
-    background: linear-gradient(1deg, #101010, #1f1f1f);
+    background: rgba(22, 51, 51, 0.08);
+    border-top: 1px solid rgba(118, 178, 176, 0.15);
+    padding: 60px 120px 40px;
+    position: relative;
 }
 
-.footer p {
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(118, 178, 176, 0.3), transparent);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.info p {
     color: var(--cinza);
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.copy {
+    margin-top: 24px;
+    font-size: 12px !important;
+    opacity: 0.7;
+}
+
+.links h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 16px;
+}
+
+.socialLinks a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 51, 51, 0.3);
+    border: 1px solid rgba(118, 178, 176, 0.2);
+    border-radius: 10px;
+    color: var(--verde);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+    background: rgba(22, 51, 51, 0.5);
+    border-color: var(--verde);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(118, 178, 176, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 60px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 30px 30px;
+    }
+    
+    .content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .info h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 20px 20px;
+    }
 }
