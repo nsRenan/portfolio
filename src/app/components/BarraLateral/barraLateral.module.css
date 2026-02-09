@@ -42,7 +42,7 @@
 }
 
 .menu {
-  border-bottom: 1px solid rgba(118, 178, 176, 0.15); 
+  border-bottom: 1px solid var(--border); 
   margin-bottom: clamp(12px, 1.6vw, 16px); 
   padding-bottom: clamp(4px, 0.4vw, 4px); 
   padding: clamp(12px, 1.4vw, 14px) clamp(8px, 1vw, 10px); 
@@ -71,7 +71,7 @@
 
 .pagina:hover {
   color: var(--verde); 
-  background: rgba(22, 51, 51, 0.2);
+  background: var(--surface-hover);
   transform: translateX(4px);
 }
 
@@ -88,22 +88,19 @@
 .botaoX {
   width: 36px;
   height: 36px;
-  position: absolute; 
-  right: clamp(12px, 1.6vw, 16px); 
-  top: clamp(12px, 1.6vw, 16px); 
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--branco); 
-  background-color: rgba(22, 51, 51, 0.3); 
-  border: 1px solid rgba(118, 178, 176, 0.2);
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--branco);
   border-radius: 8px; 
   transition: all 0.3s ease; 
   cursor: pointer;
 }
 
 .botaoX:hover {
-  background-color: rgba(22, 51, 51, 0.5); 
+  background-color: var(--surface-hover); 
   border-color: var(--verde);
   color: var(--verde);
   transform: rotate(90deg);
@@ -120,19 +117,26 @@
   top: 0; 
   right: 0; 
   margin-left: auto; 
-  background: rgba(10, 10, 10, 0.98); 
-  backdrop-filter: blur(12px);
-  border-left: 1px solid rgba(118, 178, 176, 0.15);
+  background: var(--background); 
+  border-left: 1px solid var(--border);
   height: 100vh; 
   width: clamp(200px, 60vw, 280px); 
   flex-direction: column;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+  box-shadow: -4px 0 24px var(--shadow);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 2vh, 20px) clamp(12px, 1.5vw, 16px);
+  border-bottom: 1px solid var(--border);
 }
 
 .motionDiv {
   position: fixed; 
   z-index: 40; 
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--overlay);
   backdrop-filter: blur(4px);
   width: 100vw; 
   height: 100vh; 

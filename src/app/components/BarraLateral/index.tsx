@@ -8,6 +8,7 @@ import { ReactElement, useEffect, useState } from "react";
 import { FiBox, FiInfo, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbTimeline } from "react-icons/tb";
+import ThemeToggle from "../ThemeToggle";
 
 interface menu {
   titulo: string,
@@ -44,7 +45,7 @@ export function BarraLateral() {
   useEffect(() => {
     const handleCliqueForaDoMenu = (event: MouseEvent) => {
       const elementoClicado = event.target as HTMLElement;
-      if (expandido && !elementoClicado.closest(".menu-expansivel")) {
+      if (expandido && !elementoClicado.closest(".sidebar-content")) {
         setExpandido(false);
       }
     };
@@ -108,19 +109,30 @@ export function BarraLateral() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <motion.div
-                onClick={alternarExpansao}
-                className={styles.botaoX}
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                exit={{ scale: 0, rotate: 180 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FiX />
-              </motion.div>
+              <div className={`${styles.topBar} sidebar-content`}>
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ delay: 0.15, duration: 0.2 }}
+                >
+                  <ThemeToggle />
+                </motion.div>
+                
+                <motion.div
+                  onClick={alternarExpansao}
+                  className={styles.botaoX}
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  exit={{ scale: 0, rotate: 180 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FiX />
+                </motion.div>
+              </div>
 
               <motion.div
-                className="menu-expansivel"
+                className="menu-expansivel sidebar-content"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -138,7 +150,9 @@ export function BarraLateral() {
                       Pages
                     </motion.h4>
                     <ul className={styles.conteinerMenu}>
-                      {menus.map((menu, index) => (
+                      {menus.map((menu, index) => {
+                        const offset = menu.rota === 'sobre' ? -30 : menu.rota === 'contato' ? -60 : -80;
+                        return (
                         <motion.li 
                           key={menu.titulo}
                           initial={{ x: -20, opacity: 0 }}
@@ -150,7 +164,7 @@ export function BarraLateral() {
                           activeClass="active"
                           spy={true}
                           smooth={true}
-                          offset={50}
+                          offset={offset}
                           duration={500}
                           style={{ cursor: "pointer" }}
                           onClick={alternarExpansao}
@@ -159,7 +173,7 @@ export function BarraLateral() {
                             {menu.titulo}
                           </Link>
                         </motion.li>
-                      ))}
+                      )})}
                     </ul>
                   </nav>
 

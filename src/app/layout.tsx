@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { VoltarAoTopoBotao } from './components/VoltarAoTopoBotao';
 import { ContatoBotao } from './components/ContatoBotao';
 import { Footer } from './components/Footer';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500', '700']})
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${roboto.className} ${courier.variable}`}>
+        <ThemeProvider>
          <Navbar/>
          <VoltarAoTopoBotao/>
          <ContatoBotao/>
@@ -42,6 +44,7 @@ export default function RootLayout({
          <Footer/>
          <Analytics />
          <SpeedInsights />
+        </ThemeProvider>
          </body>
     </html>
   )

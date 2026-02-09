@@ -24,8 +24,8 @@
   justify-content: center;
   gap: 0;
   padding: 0;
-  background: rgba(22, 51, 51, 0.3);
-  border: 1px solid rgba(118, 178, 176, 0.2);
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
   color: var(--verde);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -48,7 +48,7 @@
   justify-content: flex-end;
   gap: 12px;
   padding: 0 14px;
-  background: rgba(22, 51, 51, 0.5);
+  background: var(--surface);
   border-color: var(--verde);
   transform: translateY(-4px);
 }

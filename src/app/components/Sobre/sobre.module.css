@@ -74,7 +74,7 @@
     left: -12px;
     right: 12px;
     bottom: 12px;
-    border: 2px solid rgba(118, 178, 176, 0.3);
+    border: 2px solid var(--border-hover);
     border-radius: 16px;
     z-index: 0;
 }
@@ -83,7 +83,7 @@
     position: relative;
     z-index: 1;
     border-radius: 12px;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 48px var(--shadow);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: grayscale(20%);
     width: min(300px, 90vw);
@@ -93,7 +93,7 @@
 .imagem:hover img {
     transform: translate(8px, -8px);
     filter: grayscale(0%);
-    box-shadow: 0 24px 64px rgba(118, 178, 176, 0.3);
+    box-shadow: 0 24px 64px var(--border-hover);
 }
 
 @media (max-width: 968px) {

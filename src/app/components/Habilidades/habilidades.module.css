@@ -36,8 +36,8 @@
   min-width: 44px;
   min-height: 44px;
   padding: clamp(6px, 0.8vw, 8px);
-  background: rgba(22, 51, 51, 0.2);
-  border: 1px solid rgba(118, 178, 176, 0.15);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -52,8 +52,8 @@
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(-4px);
-  background: rgba(22, 51, 51, 0.95);
-  color: var(--branco);
+  background: var(--surface-hover);
+  color: var(--text-primary);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: clamp(10px, 1.2vw, 12px);
@@ -62,8 +62,8 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(118, 178, 176, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 4px 12px var(--shadow);
   z-index: 10;
 }
 
@@ -74,7 +74,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 4px solid transparent;
-  border-top-color: rgba(22, 51, 51, 0.95);
+  border-top-color: var(--surface-hover);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,10 +82,10 @@
 }
 
 .iconWrapper:hover {
-  background: rgba(22, 51, 51, 0.4);
-  border-color: rgba(118, 178, 176, 0.3);
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(118, 178, 176, 0.2);
+  box-shadow: 0 8px 16px var(--shadow);
 }
 
 .iconWrapper:hover::after {

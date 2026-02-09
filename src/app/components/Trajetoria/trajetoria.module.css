@@ -34,8 +34,8 @@
 }
 
 .card {
-  background: rgba(22, 51, 51, 0.15);
-  border: 1px solid rgba(118, 178, 176, 0.15);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: clamp(24px, 2.5vw, 32px) clamp(20px, 2vw, 24px);
   cursor: pointer;
@@ -57,10 +57,10 @@
 }
 
 .card:hover {
-  background: rgba(22, 51, 51, 0.3);
-  border-color: rgba(118, 178, 176, 0.3);
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(118, 178, 176, 0.15);
+  box-shadow: 0 16px 40px var(--shadow);
 }
 
 .card:hover::before {

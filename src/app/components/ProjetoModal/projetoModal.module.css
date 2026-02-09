@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: var(--overlay);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -24,8 +24,8 @@
 }
 
 .modal {
-  background: rgba(22, 22, 22, 0.95);
-  border: 1px solid rgba(118, 178, 176, 0.2);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   max-width: 800px;
   width: 100%;
@@ -33,7 +33,7 @@
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(118, 178, 176, 0.1) inset;
+  box-shadow: 0 24px 64px var(--shadow), 0 0 0 1px var(--border) inset;
 }
 
 @keyframes slideUp {
@@ -52,7 +52,7 @@
 }
 
 .modal::-webkit-scrollbar-track {
-  background: rgba(118, 178, 176, 0.05);
+  background: var(--background-secondary);
   border-radius: 8px;
 }
 
@@ -65,7 +65,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--surface-hover);
   border: none;
   color: var(--cinza);
   cursor: pointer;
@@ -80,7 +80,7 @@
 }
 
 .closeButton:hover {
-  background: rgba(118, 178, 176, 0.2);
+  background: var(--border-hover);
   color: var(--verde);
   transform: rotate(90deg);
 }
@@ -149,8 +149,8 @@
   flex: 1;
   min-width: 200px;
   padding: 16px 24px;
-  background: rgba(118, 178, 176, 0.1);
-  border: 1px solid rgba(118, 178, 176, 0.3);
+  background: var(--surface);
+  border: 1px solid var(--border-hover);
   border-radius: 12px;
   color: var(--verde);
   text-decoration: none;
@@ -163,10 +163,10 @@
 }
 
 .linkButton:hover {
-  background: rgba(118, 178, 176, 0.2);
+  background: var(--surface-hover);
   border-color: var(--verde);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(118, 178, 176, 0.2);
+  box-shadow: 0 8px 24px var(--border-hover);
 }
 
 .linkButton span:last-child {
@@ -179,7 +179,7 @@
 }
 
 .deploy {
-  background: rgba(118, 178, 176, 0.15);
+  background: var(--surface-hover);
 }
 
 @media (max-width: 768px) {

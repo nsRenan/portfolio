@@ -6,9 +6,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.85);
+  background: var(--surface);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(118, 178, 176, 0.1);
+  border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
 }
 
@@ -17,9 +17,25 @@
   transition: all 0.3s ease;
 }
 
+.nome img {
+  filter: brightness(1);
+  transition: filter 0.3s ease;
+}
+
+[data-theme="light"] .nome img {
+  filter: brightness(0.3);
+}
+
 .nome:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(118, 178, 176, 0.4));
+}
+
+.nome:hover img {
+  filter: drop-shadow(0 0 8px var(--verde)) brightness(1);
+}
+
+[data-theme="light"] .nome:hover img {
+  filter: drop-shadow(0 0 8px var(--verde)) brightness(0.3);
 }
 
 .menu {

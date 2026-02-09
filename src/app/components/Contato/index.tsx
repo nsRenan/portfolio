@@ -6,13 +6,20 @@ import { RiMailSendLine } from 'react-icons/ri';
 
 export function Contato() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
 
+    if (!accessKey) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+      return;
+    }
+
     const formData = new FormData(e.currentTarget);
-    formData.append('access_key', '59af163e-0098-4874-9555-eef7229ac29e');
+    formData.append('access_key', accessKey);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {

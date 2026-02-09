@@ -43,7 +43,7 @@ export function Habilidades() {
           <SiReact color="#00D8FF" />
         </div>
         <div className={styles.iconWrapper} data-tooltip="Next.js">
-          <SiNextdotjs color="#F2F2F2" />
+          <SiNextdotjs style={{ color: 'var(--icon-color)' }} />
         </div>
         <div className={styles.iconWrapper} data-tooltip="Vue.js">
           <SiVuedotjs color="#42B883" />
@@ -58,7 +58,7 @@ export function Habilidades() {
           <SiNodedotjs color="#388E3C" />
         </div>
         <div className={styles.iconWrapper} data-tooltip="Express">
-          <SiExpress color="#F2F2F2" />
+          <SiExpress style={{ color: 'var(--icon-color)' }} />
         </div>
         <div className={styles.iconWrapper} data-tooltip="PHP">
           <SiPhp color="#777BB4" />
@@ -79,7 +79,7 @@ export function Habilidades() {
           <SiGit color="#DE4C36" />
         </div>
         <div className={styles.iconWrapper} data-tooltip="GitHub">
-          <SiGithub color="#F2F2F2" />
+          <SiGithub style={{ color: 'var(--icon-color)' }} />
         </div>
         <div className={styles.iconWrapper} data-tooltip="VS Code">
           <SiVisualstudiocode color="#0065A9" />
