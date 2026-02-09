@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar'
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { VoltarAoTopoBotao } from './components/VoltarAoTopoBotao';
+import { ContatoBotao } from './components/ContatoBotao';
 import { Footer } from './components/Footer';
 
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className={` ${roboto.className} ${courier.variable}`}>
          <Navbar/>
          <VoltarAoTopoBotao/>
+         <ContatoBotao/>
          {children}
          <Footer/>
          <Analytics />

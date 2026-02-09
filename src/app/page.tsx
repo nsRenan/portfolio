@@ -4,6 +4,7 @@ import { Seta } from "./components/Seta";
 import { Carrossel } from "./components/Carrossel";
 import Trajetoria from "./components/Trajetoria";
 import { Hero } from "./components/Hero";
+import { Contato } from "./components/Contato";
 
 export default function Home() {
   return (
@@ -28,6 +29,14 @@ export default function Home() {
 
       <section id="trajetoria">
         <Trajetoria />
+      </section>
+
+      <div className={styles.seta}>
+        <Seta />
+      </div>
+
+      <section id="contato">
+        <Contato />
       </section>
     </main>
   );

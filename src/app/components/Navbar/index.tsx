@@ -60,12 +60,18 @@ export function Navbar() {
         <a target="_blank" href="https://github.com/nsRenan">
           <SiGithub /> Github
         </a>
-        <button className={styles.contato}>
-          <a href="mailto:contact.renannobre@gmail.com">
-            <RiMailSendLine />
-            Contato
-          </a>
-        </button>
+        <Link
+          to="contato"
+          spy={true}
+          smooth={true}
+          offset={-20}
+          duration={500}
+          className={styles.contato}
+          style={{ cursor: "pointer" }}
+        >
+          <RiMailSendLine />
+          Contato
+        </Link>
       </div>
       <BarraLateral />
     </header>

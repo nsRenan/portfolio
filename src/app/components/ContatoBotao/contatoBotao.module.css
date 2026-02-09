@@ -1,7 +1,7 @@
 .botaoDiv {
   position: fixed;
   z-index: 100;
-  bottom: 32px; 
+  bottom: 96px; 
   right: 32px; 
   animation: fadeIn 0.3s ease;
 }
@@ -44,7 +44,7 @@
 }
 
 .botao:hover {
-  width: 180px;
+  width: 200px;
   justify-content: flex-end;
   gap: 12px;
   padding: 0 14px;
@@ -54,18 +54,17 @@
 }
 
 .botao:hover .texto {
-  max-width: 150px;
+  max-width: 170px;
   opacity: 1;
 }
 
 .botao svg {
-  font-size: 20px;
   flex-shrink: 0;
 }
 
 @media (min-width: 1700px) {
   .botaoDiv {
-    bottom: 48px;
+    bottom: 120px;
     right: 48px;
   }
   
@@ -81,7 +80,7 @@
 
 @media (max-width: 768px) {
   .botaoDiv {
-    bottom: 20px;
+    bottom: 76px;
     right: 20px;
   }
   

@@ -94,6 +94,10 @@
   color: var(--verde);
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .contato:hover {
@@ -101,14 +105,6 @@
   border-color: var(--verde);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(118, 178, 176, 0.3);
-}
-
-.contato a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: inherit;
 }
 
 @media (max-width: 1050px) {
