@@ -1,7 +1,30 @@
 .carrossel {
   width: 100%;
-  padding: 40px 0px;
-  background: linear-gradient(45deg, #101010, #1f1f1f);
+  padding: 80px 120px;
+  position: relative;
+  background: linear-gradient(180deg, transparent 0%, rgba(22, 51, 51, 0.08) 50%, transparent 100%);
+}
+
+.carrossel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(118, 178, 176, 0.3), transparent);
+}
+
+.carrossel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(118, 178, 176, 0.3), transparent);
 }
 
 .card {
@@ -12,22 +35,99 @@
 }
 
 .carrossel h2 {
-  font-size: 32px;
-  gap: 8px;
-  display: flex;
-  align-items: center;
-  color: var(--verde);
-  margin-bottom: 26px;
-  padding: 0px 50px;
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--branco);
+  margin-bottom: 60px;
+  text-align: left;
+  letter-spacing: -1px;
+  position: relative;
+  padding-left: 20px;
 }
 
-.swiper button {
-  color: var(--verde); /* Cor do texto (opcional) */
+.carrossel h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--verde) 0%, #5a9a98 100%);
+  border-radius: 2px;
+}
+
+.carrossel :global(.swiper-button-next),
+.carrossel :global(.swiper-button-prev) {
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(22, 51, 51, 0.4) !important;
+  border: 1px solid rgba(118, 178, 176, 0.2) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px);
+}
+
+.carrossel :global(.swiper-button-next::after),
+.carrossel :global(.swiper-button-prev::after) {
+  color: #76b2b0 !important;
+  font-size: 22px !important;
+  font-weight: bold !important;
+}
+
+.carrossel :global(.swiper-button-next:hover),
+.carrossel :global(.swiper-button-prev:hover) {
+  background: rgba(22, 51, 51, 0.7) !important;
+  border-color: #76b2b0 !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(118, 178, 176, 0.3);
+}
+
+.carrossel :global(.swiper-button-next:hover::after),
+.carrossel :global(.swiper-button-prev:hover::after) {
+  color: #a3d4d2 !important;
+}
+
+.carrossel :global(.swiper-button-disabled) {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.swiper :global(.swiper-pagination-bullet) {
+  background: rgba(118, 178, 176, 0.3);
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper :global(.swiper-pagination-bullet-active) {
+  background: var(--verde);
+  width: 24px;
+  border-radius: 5px;
+}
+
+@media (max-width: 1024px){
+  .carrossel {
+    padding: 60px 60px;
+  }
+}
+
+@media (max-width: 768px){
+  .carrossel {
+    padding: 40px 30px;
+  }
+  .carrossel h2 {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 400px){
   .card{
     margin: 10px 10px;
     padding: 10px;
+  }
+  .carrossel h2 {
+    font-size: 28px;
   }
 }
