@@ -1,4 +1,7 @@
-import { HistoriaCard } from "../HistoriaCard";
+'use client';
+
+import { useState } from "react";
+import { TrajetoriaModal } from "../TrajetoriaModal";
 import styles from "./trajetoria.module.css";
 
 const momentos = [
@@ -66,22 +69,57 @@ const momentos = [
   },
 ];
 
+interface MomentoSelecionado {
+  ano: string;
+  titulo: string;
+  descricao: { descricao: string; certificado?: string }[];
+}
+
 export default function Trajetoria() {
+  const [modalAberto, setModalAberto] = useState(false);
+  const [momentoSelecionado, setMomentoSelecionado] = useState<MomentoSelecionado | null>(null);
+
+  const abrirModal = (momento: MomentoSelecionado) => {
+    setMomentoSelecionado(momento);
+    setModalAberto(true);
+  };
+
+  const fecharModal = () => {
+    setModalAberto(false);
+    setTimeout(() => setMomentoSelecionado(null), 300);
+  };
+
   return (
     <div className={styles.conteinerTrajetoria}>
-      <h2 className={styles.titulo}> Minha Trajetória</h2>
-      <div  className={styles.trajetoriaCard}>
-      {momentos.map((trajeto) => (
-        <div key={trajeto.titulo} className={styles.card}>
-          <HistoriaCard
-            ano={trajeto.ano}
-            titulo={trajeto.titulo}
-            descricao={trajeto.descricao}
-            key={trajeto.titulo}
-          />
-        </div>
-      ))}
+      <h2 className={styles.titulo}>Minha Trajetória</h2>
+      <div className={styles.trajetoriaGrid}>
+        {momentos.map((trajeto) => (
+          <div 
+            key={trajeto.ano} 
+            className={styles.card}
+            onClick={() => abrirModal(trajeto)}
+          >
+            <span className={styles.ano}>{trajeto.ano}</span>
+            <h3 className={styles.cardTitulo}>{trajeto.titulo}</h3>
+            <p className={styles.preview}>
+              {trajeto.descricao.length} {trajeto.descricao.length === 1 ? 'marco' : 'marcos'}
+            </p>
+            <div className={styles.verMais}>
+              Ver detalhes →
+            </div>
+          </div>
+        ))}
       </div>
-      </div>
+
+      {momentoSelecionado && (
+        <TrajetoriaModal
+          isOpen={modalAberto}
+          onClose={fecharModal}
+          ano={momentoSelecionado.ano}
+          titulo={momentoSelecionado.titulo}
+          descricao={momentoSelecionado.descricao}
+        />
+      )}
+    </div>
   );
 }

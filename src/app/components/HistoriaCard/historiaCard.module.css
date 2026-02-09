@@ -1,55 +1,247 @@
 .card {
-  width: fit-content;
+  width: 100%;
+  max-width: 750px;
+  background: rgba(16, 16, 16, 0.6);
+  border: 1px solid rgba(118, 178, 176, 0.15);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--verde), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  top: 28px;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, var(--verde) 0%, #5a9a98 100%);
+  border-radius: 50%;
+  border: 3px solid #101010;
+  box-shadow: 0 0 20px rgba(118, 178, 176, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(118, 178, 176, 0.3);
+  box-shadow: 0 16px 48px rgba(118, 178, 176, 0.2), 0 0 0 1px rgba(118, 178, 176, 0.1) inset;
+  background: rgba(22, 51, 51, 0.4);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover::before {
+  box-shadow: 0 0 30px rgba(118, 178, 176, 0.6);
+  transform: scale(1.15);
 }
 
 .card h3 {
   font-size: 28px;
+  font-weight: 700;
   color: var(--verde);
+  margin-bottom: 8px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-family: 'Courier New', monospace;
 }
 
 .card h4 {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--branco);
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+  opacity: 0.95;
+  position: relative;
+  padding-bottom: 12px;
 }
+
+.card h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--verde);
+  transition: width 0.4s ease;
+}
+
+.card:hover h4::after {
+  width: 80px;
+}
+
 .card ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .descricaoCard {
-  margin-bottom: 10px;
+  position: relative;
+  padding: 0;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.descricaoCard:hover .descricao {
+  color: #a0a0a0;
+  padding-left: 12px;
 }
 
 .descricao {
   color: var(--cinza);
-  font-size: 16px;
-  line-height: normal;
-  margin:  18px 0px 0px 0px;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+  letter-spacing: 0.3px;
+  padding-left: 8px;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
 }
+
+.descricao:hover {
+  border-left-color: var(--verde);
+}
+
 .botao {
   display: flex;
   justify-content: flex-end;
+  margin-top: 12px;
 }
+
 .certificado {
-  display: flex;
-  width: 86px;
-  height: 26px;
-  color: var(--branco);
-  border: solid 1px var(--branco);
-  border-radius: 4px;
+  display: inline-flex;
+  padding: 6px 18px;
+  color: var(--cinza);
+  border: 1px solid rgba(118, 178, 176, 0.3);
+  border-radius: 20px;
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  font-weight: 400;
-  margin-top: 4px;
+  font-weight: 500;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.certificado::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--verde);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: -1;
+}
+
+.certificado:hover {
+  color: #101010;
+  border-color: var(--verde);
+  transform: translateY(-1px);
+}
+
+.certificado:hover::before {
+  width: 200%;
+  height: 200%;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    padding: 28px;
+  }
+  .card::before {
+    left: -50px;
+    width: 12px;
+    height: 12px;
+  }
+  .card h3 {
+    font-size: 26px;
+  }
+  .card h4 {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 764px) {
+  .card {
+    padding: 24px;
+  }
+  .card::before {
+    left: -45px;
+    width: 11px;
+    height: 11px;
+    top: 24px;
+  }
+  .card h3 {
+    font-size: 24px;
+  }
   .card h4 {
-    font-size: 22px;
+    font-size: 19px;
+  }
+  .descricao {
+    font-size: 14px;
   }
 }
+
 @media (max-width: 584px) {
+  .card {
+    padding: 20px;
+  }
+  .card::before {
+    left: -40px;
+    width: 10px;
+    height: 10px;
+    top: 20px;
+  }
+  .card h3 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
   .card h4 {
-    font-size: 21.5px;
+    font-size: 18px;
+  }
+  .certificado {
+    padding: 5px 14px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 310px) {
+  .card::before {
+    left: -35px;
+  }
+  .card h3 {
+    font-size: 24px;
   }
 }
 
