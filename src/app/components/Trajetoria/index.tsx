@@ -57,17 +57,52 @@ const momentos = [
   },
   {
     ano: "2024",
-    titulo: "Desenvolvimento Web",
+    titulo: "Desenvolvimento Web Moderno",
     descricao: [
       {
-        descricao: "Em 2024, tenho priorizado meu estudo em JavaScript, dedicando tempo para explorar suas bibliotecas e frameworks. Estou empenhado em aprofundar meu conhecimento e habilidades nessa linguagem versátil e em constante evolução."
+        descricao: "Em janeiro, dediquei-me a aprender TypeScript e a utilizar o framework Next.js para desenvolver meu primeiro portfólio. Essa experiência proporcionou-me a oportunidade de explorar as vantagens do TypeScript e aplicar os recursos avançados do Next.js na criação de uma aplicação web robusta e dinâmica."
       },
       {
-        descricao: "Em janeiro, dediquei-me a aprender TypeScript e a utilizar o framework Next.js para desenvolver meu primeiro portfólio. Essa experiência proporcionou-me a oportunidade de explorar as vantagens do TypeScript e aplicar os recursos avançados do Next.js na criação de uma aplicação web robusta e dinâmica."
+        descricao: "Durante o primeiro semestre, aprofundei meus conhecimentos em React, dominando conceitos avançados como hooks personalizados, Context API, gerenciamento de estado com Redux e otimização de performance. Aprendi a criar componentes reutilizáveis e seguir as melhores práticas do ecossistema React."
+      },
+      {
+        descricao: "Aprimorei minhas habilidades em desenvolvimento backend com Node.js e Express, implementando arquiteturas RESTful, autenticação JWT, integração com bancos de dados relacionais (PostgreSQL) e não-relacionais (MongoDB), além de práticas de segurança e validação de dados."
+      },
+      {
+        descricao: "Mergulhei no mundo do CSS moderno, explorando Tailwind CSS, CSS Modules, Styled Components e animações avançadas. Desenvolvi habilidades em criar interfaces responsivas, acessíveis e com excelente experiência do usuário, seguindo princípios de design system."
+      },
+      {
+        descricao: "Aprimorei conhecimentos em controle de versão com Git, trabalhando com Git Flow, estratégias de branching, resolução de conflitos e colaboração em equipe através de pull requests e code reviews."
+      }
+    ]
+  },
+  {
+    ano: "2025",
+    titulo: "Crescimento Profissional",
+    descricao: [
+      {
+        descricao: "Iniciei o ano expandindo meu conhecimento para além do React, explorando o ecossistema Vue.js e Nuxt. Me encantei pela simplicidade e elegância do framework, estudando sua composição API, sistema de roteamento, e as poderosas funcionalidades de server-side rendering e geração de sites estáticos."
+      },
+      {
+        descricao: "Aprofundei em arquitetura de software e boas práticas, estudando padrões de design, clean code, princípios SOLID e estruturação de projetos escaláveis. Aprendi a escrever código mais limpo, manutenível e testável, seguindo as melhores práticas da indústria."
+      },
+      {
+        descricao: "Explorei técnicas avançadas de otimização e performance web, estudando lazy loading, code splitting, otimização de bundle, estratégias de cache e técnicas de SEO. Aprendi a utilizar ferramentas de análise como Lighthouse para melhorar a experiência do usuário e entregar aplicações mais rápidas e eficientes."
+      },
+      {
+        descricao: "Em agosto de 2025, alcancei um marco decisivo na minha carreira: consegui minha primeira oportunidade como desenvolvedor profissional na huboo.ai, uma startup inovadora focada em soluções de inteligência artificial. Esta conquista representou a materialização de anos de dedicação e estudo.",
+        certificado: "https://huboo.ai/"
+      },
+      {
+        descricao: "Na huboo.ai, passei a trabalhar diariamente com tecnologias de ponta como Nuxt 4, Tailwind CSS e os frameworks mais modernos do ecossistema JavaScript. Tive a oportunidade de aplicar todo conhecimento adquirido em projetos reais de produção, colaborar com desenvolvedores experientes, participar de code reviews e contribuir efetivamente para o crescimento da empresa."
+      },
+      {
+        descricao: "A experiência profissional acelerou exponencialmente meu desenvolvimento técnico e me proporcionou vivência prática em metodologias ágeis, trabalho em equipe, gestão de tempo e comunicação efetiva. Aprendi a balancear qualidade de código com prazos de entrega e a importância da documentação e manutenibilidade em projetos de longo prazo."
       }
     ]
   },
 ];
+
 
 interface MomentoSelecionado {
   ano: string;
