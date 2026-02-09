@@ -63,7 +63,11 @@ export function TrajetoriaModal({ isOpen, onClose, ano, titulo, descricao }: Mod
                   target="_blank"
                   href={momento.certificado}
                 >
-                  {momento.certificado.includes('huboo.ai') ? 'Visitar Site →' : 'Ver Certificado →'}
+                  {momento.certificado.includes('huboo.ai') 
+                    ? 'Visitar Site →' 
+                    : momento.certificado.includes('diploma') 
+                      ? 'Ver Diploma →' 
+                      : 'Ver Certificado →'}
                 </Link>
               )}
             </div>

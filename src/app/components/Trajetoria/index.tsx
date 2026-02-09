@@ -26,7 +26,7 @@ const momentos = [
   },
   {
     ano: "2022",
-    titulo: "Desbravando ao OOP",
+    titulo: "Desbravando OOP",
     descricao: [
       {
         descricao: "Em março de 2022, iniciei um estudo dedicado às linguagens de programação orientadas a objetos (OOP), com ênfase especial em Java. Nesse período, mergulhei profundamente nos conceitos fundamentais da OOP, explorando as características e a sintaxe específicas de Java.",
@@ -50,6 +50,10 @@ const momentos = [
         certificado: "/certificados/certificado_azure.pdf"
       },
       {
+        descricao: "Em julho, concluí com êxito a disciplina 'Modelos, métodos e técnicas da engenharia de software' com carga horária de 160 horas no Centro Universitário AGES, obtendo certificação em Qualificação Profissional em Modelos Métodos e Técnicas da Engenharia de Software.",
+        certificado: "/certificados/certificado_engenharia_software.pdf"
+      },
+      {
         descricao: "Em dezembro deste ano, finalizei um curso intensivo de 500 horas focado no desenvolvimento de software backend utilizando Node.js. Aprendi habilidades essenciais para criar APIs, manipular bancos de dados e implementar lógica de negócios no servidor.",
         certificado: "/certificados/certificado_cubos.pdf"
       },
@@ -60,19 +64,14 @@ const momentos = [
     titulo: "Desenvolvimento Web Moderno",
     descricao: [
       {
-        descricao: "Em janeiro, dediquei-me a aprender TypeScript e a utilizar o framework Next.js para desenvolver meu primeiro portfólio. Essa experiência proporcionou-me a oportunidade de explorar as vantagens do TypeScript e aplicar os recursos avançados do Next.js na criação de uma aplicação web robusta e dinâmica."
+        descricao: "Aprofundei conhecimentos em TypeScript e Next.js, desenvolvendo meu primeiro portfólio pessoal com foco em frontend moderno. Dominei conceitos avançados do React como hooks personalizados, Context API, gerenciamento de estado e otimização de performance, criando interfaces responsivas e elegantes."
       },
       {
-        descricao: "Durante o primeiro semestre, aprofundei meus conhecimentos em React, dominando conceitos avançados como hooks personalizados, Context API, gerenciamento de estado com Redux e otimização de performance. Aprendi a criar componentes reutilizáveis e seguir as melhores práticas do ecossistema React."
+        descricao: "No backend, aprimorei habilidades com Node.js e Express, implementando arquiteturas RESTful, autenticação JWT, integração com PostgreSQL e MongoDB, além de práticas de segurança. No frontend, explorei CSS moderno com Tailwind CSS, CSS Modules e Styled Components, aplicando princípios de design system e acessibilidade."
       },
       {
-        descricao: "Aprimorei minhas habilidades em desenvolvimento backend com Node.js e Express, implementando arquiteturas RESTful, autenticação JWT, integração com bancos de dados relacionais (PostgreSQL) e não-relacionais (MongoDB), além de práticas de segurança e validação de dados."
-      },
-      {
-        descricao: "Mergulhei no mundo do CSS moderno, explorando Tailwind CSS, CSS Modules, Styled Components e animações avançadas. Desenvolvi habilidades em criar interfaces responsivas, acessíveis e com excelente experiência do usuário, seguindo princípios de design system."
-      },
-      {
-        descricao: "Aprimorei conhecimentos em controle de versão com Git, trabalhando com Git Flow, estratégias de branching, resolução de conflitos e colaboração em equipe através de pull requests e code reviews."
+        descricao: "Em julho, concluí com êxito a disciplina 'Análise de dados e big data' com carga horária de 160 horas no Centro Universitário AGES, obtendo certificação em Qualificação Profissional em Análise de Dados.",
+        certificado: "/certificados/certificado_big_data.pdf"
       }
     ]
   },
@@ -81,23 +80,15 @@ const momentos = [
     titulo: "Crescimento Profissional",
     descricao: [
       {
-        descricao: "Iniciei o ano expandindo meu conhecimento para além do React, explorando o ecossistema Vue.js e Nuxt. Me encantei pela simplicidade e elegância do framework, estudando sua composição API, sistema de roteamento, e as poderosas funcionalidades de server-side rendering e geração de sites estáticos."
+        descricao: "Expandi conhecimento para o ecossistema Vue.js e Nuxt, explorando composição API, server-side rendering e geração de sites estáticos. Aprofundei em arquitetura de software, padrões de design, clean code e otimização de performance web."
       },
       {
-        descricao: "Aprofundei em arquitetura de software e boas práticas, estudando padrões de design, clean code, princípios SOLID e estruturação de projetos escaláveis. Aprendi a escrever código mais limpo, manutenível e testável, seguindo as melhores práticas da indústria."
+        descricao: "Em julho, concluí minha graduação em Ciências da Computação pela Universidade AGES. Quatro anos de intenso aprendizado consolidaram uma base sólida em algoritmos, estruturas de dados e engenharia de software, complementando perfeitamente minha experiência prática.",
+        certificado: "/certificados/diploma_ciencia_computacao.pdf"
       },
       {
-        descricao: "Explorei técnicas avançadas de otimização e performance web, estudando lazy loading, code splitting, otimização de bundle, estratégias de cache e técnicas de SEO. Aprendi a utilizar ferramentas de análise como Lighthouse para melhorar a experiência do usuário e entregar aplicações mais rápidas e eficientes."
-      },
-      {
-        descricao: "Em agosto de 2025, alcancei um marco decisivo na minha carreira: consegui minha primeira oportunidade como desenvolvedor profissional na huboo.ai, uma startup inovadora focada em soluções de inteligência artificial. Esta conquista representou a materialização de anos de dedicação e estudo.",
+        descricao: "Em agosto, conquistei minha primeira oportunidade como desenvolvedor profissional na huboo.ai, startup focada em soluções de IA. Trabalho com Nuxt 4, Tailwind CSS e frameworks modernos, aplicando conhecimento em projetos reais e colaborando com desenvolvedores experientes.",
         certificado: "https://huboo.ai/"
-      },
-      {
-        descricao: "Na huboo.ai, passei a trabalhar diariamente com tecnologias de ponta como Nuxt 4, Tailwind CSS e os frameworks mais modernos do ecossistema JavaScript. Tive a oportunidade de aplicar todo conhecimento adquirido em projetos reais de produção, colaborar com desenvolvedores experientes, participar de code reviews e contribuir efetivamente para o crescimento da empresa."
-      },
-      {
-        descricao: "A experiência profissional acelerou exponencialmente meu desenvolvimento técnico e me proporcionou vivência prática em metodologias ágeis, trabalho em equipe, gestão de tempo e comunicação efetiva. Aprendi a balancear qualidade de código com prazos de entrega e a importância da documentação e manutenibilidade em projetos de longo prazo."
       }
     ]
   },
