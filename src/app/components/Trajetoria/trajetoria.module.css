@@ -119,6 +119,23 @@
   }
 }
 
+@media (hover: none) {
+  .verMais {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .card:active {
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
+    transform: scale(0.98);
+  }
+
+  .card::before {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .trajetoriaGrid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
