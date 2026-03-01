@@ -13,7 +13,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button 
+    <button
       className={styles.toggleButton}
       onClick={handleClick}
       aria-label={`Mudar para modo ${theme === 'light' ? 'escuro' : 'claro'}`}
