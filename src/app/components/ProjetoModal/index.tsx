@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import styles from "./projetoModal.module.css";
-import { useEffect, ReactElement } from "react";
+import { useEffect, useState, ReactElement } from "react";
 import { MdClose } from "react-icons/md";
 
 interface ProjetoModalProps {
@@ -14,7 +14,10 @@ interface ProjetoModalProps {
   ferramentas: ReactElement[];
   github: string;
   deploy?: string;
+  descricaoLonga?: string; // descrição expandível
 }
+
+const PREVIEW_LENGTH = 120;
 
 export function ProjetoModal({ 
   isOpen, 
@@ -23,8 +26,17 @@ export function ProjetoModal({
   imagem, 
   ferramentas, 
   github, 
-  deploy 
+  deploy,
+  descricaoLonga,
 }: ProjetoModalProps) {
+  const [expandido, setExpandido] = useState(false);
+
+  const temMais = descricaoLonga ? descricaoLonga.length > PREVIEW_LENGTH : false;
+  const textoExibido = descricaoLonga
+    ? expandido || !temMais
+      ? descricaoLonga
+      : descricaoLonga.slice(0, PREVIEW_LENGTH).trimEnd() + '…'
+    : null;
   useEffect(() => {
     if (isOpen) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -67,7 +79,21 @@ export function ProjetoModal({
 
         <div className={styles.content}>
           <h2 className={styles.titulo}>{descricao}</h2>
-          
+
+          {textoExibido && (
+            <p className={styles.descricaoLonga}>
+              {textoExibido}
+              {temMais && (
+                <button
+                  className={styles.lerMaisBtn}
+                  onClick={() => setExpandido(v => !v)}
+                >
+                  {expandido ? ' Ler menos' : ' Ler mais'}
+                </button>
+              )}
+            </p>
+          )}
+
           <div className={styles.ferramentas}>
             <span className={styles.label}>Tecnologias:</span>
             <div className={styles.icons}>

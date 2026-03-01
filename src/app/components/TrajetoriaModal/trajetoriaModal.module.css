@@ -147,6 +147,22 @@
   letter-spacing: 0.3px;
 }
 
+.lerMaisInline {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--verde);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  margin-left: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.lerMaisInline:hover {
+  opacity: 0.75;
+}
+
 .certificado {
   display: inline-flex;
   align-items: center;

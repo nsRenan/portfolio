@@ -99,6 +99,24 @@
     transform: translateY(0);
 }
 
+@media (hover: none) {
+    .verMais {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .card::before {
+        opacity: 1;
+    }
+
+    .card:active {
+        background: var(--surface-hover);
+        border-color: var(--border-hover);
+        transform: scale(0.98);
+        box-shadow: 0 8px 24px var(--shadow);
+    }
+}
+
 @media (max-width: 870px){
     .card {
         width: 340px;

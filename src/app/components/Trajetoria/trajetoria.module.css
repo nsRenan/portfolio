@@ -30,7 +30,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(16px, 2vw, 24px);
-  max-width: 1200px;
+  max-width: 1600px;
 }
 
 .card {
@@ -116,6 +116,23 @@
 @media (max-width: 1024px) {
   .trajetoriaGrid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (hover: none) {
+  .verMais {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .card:active {
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
+    transform: scale(0.98);
+  }
+
+  .card::before {
+    opacity: 1;
   }
 }
 

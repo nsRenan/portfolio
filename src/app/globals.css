@@ -5,6 +5,19 @@
   --verde: #76b2b0;
   --verde-esuro: #4b7574;
   --branco: #F2F2F2;
+
+  /* fallback dark — evita flash branco antes do script de tema rodar */
+  --background: #101010;
+  --background-secondary: rgba(22, 51, 51, 0.08);
+  --surface: rgba(22, 51, 51, 0.15);
+  --surface-hover: rgba(22, 51, 51, 0.3);
+  --border: rgba(118, 178, 176, 0.15);
+  --border-hover: rgba(118, 178, 176, 0.3);
+  --text-primary: #F2F2F2;
+  --text-secondary: #828282;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --icon-color: #F2F2F2;
 }
 
 [data-theme="dark"] {

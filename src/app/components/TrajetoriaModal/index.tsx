@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "./trajetoriaModal.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
 
 interface momento {
@@ -18,6 +18,45 @@ interface ModalProps {
   descricao: momento[];
 }
 
+const PREVIEW_LENGTH = 100;
+
+function ItemDescricao({ momento }: { momento: momento }) {
+  const [expandido, setExpandido] = useState(false);
+  const temMais = momento.descricao.length > PREVIEW_LENGTH;
+  const texto = expandido || !temMais
+    ? momento.descricao
+    : momento.descricao.slice(0, PREVIEW_LENGTH).trimEnd() + '…';
+
+  return (
+    <div className={styles.item}>
+      <p className={styles.descricao}>
+        {texto}
+        {temMais && (
+          <button
+            className={styles.lerMaisInline}
+            onClick={() => setExpandido((v) => !v)}
+          >
+            {expandido ? ' Ler menos' : ' Ler mais'}
+          </button>
+        )}
+      </p>
+      {momento.certificado && (
+        <Link
+          className={styles.certificado}
+          target="_blank"
+          href={momento.certificado}
+        >
+          {momento.certificado.includes('huboo.ai')
+            ? 'Visitar Site →'
+            : momento.certificado.includes('diploma')
+              ? 'Ver Diploma →'
+              : 'Ver Certificado →'}
+        </Link>
+      )}
+    </div>
+  );
+}
+
 export function TrajetoriaModal({ isOpen, onClose, ano, titulo, descricao }: ModalProps) {
   useEffect(() => {
     if (isOpen) {
@@ -30,7 +69,7 @@ export function TrajetoriaModal({ isOpen, onClose, ano, titulo, descricao }: Mod
       document.body.style.paddingRight = '';
       document.documentElement.style.overflow = '';
     }
-    
+
     return () => {
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
@@ -54,33 +93,20 @@ export function TrajetoriaModal({ isOpen, onClose, ano, titulo, descricao }: Mod
         <button className={styles.closeButton} onClick={onClose}>
           <MdClose size={24} />
         </button>
-        
+
         <div className={styles.header}>
           <span className={styles.ano}>{ano}</span>
           <h2 className={styles.titulo}>{titulo}</h2>
         </div>
 
         <div className={styles.content}>
-          {descricao.map((momento, index) => (
-            <div key={index} className={styles.item}>
-              <p className={styles.descricao}>{momento.descricao}</p>
-              {momento.certificado && (
-                <Link
-                  className={styles.certificado}
-                  target="_blank"
-                  href={momento.certificado}
-                >
-                  {momento.certificado.includes('huboo.ai') 
-                    ? 'Visitar Site →' 
-                    : momento.certificado.includes('diploma') 
-                      ? 'Ver Diploma →' 
-                      : 'Ver Certificado →'}
-                </Link>
-              )}
-            </div>
+          {descricao.map((item, index) => (
+            <ItemDescricao key={index} momento={item} />
           ))}
         </div>
       </div>
     </div>
   );
 }
+
+

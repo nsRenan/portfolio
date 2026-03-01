@@ -7,7 +7,7 @@ import styles from "./trajetoria.module.css";
 const momentos = [
   {
     ano: "2021",
-    titulo: "Ciencias da Computação",
+    titulo: "Ciências da Computação",
     descricao: [
       {
         descricao:
@@ -120,8 +120,8 @@ export default function Trajetoria() {
       <h2 className={styles.titulo}>Minha Trajetória</h2>
       <div className={styles.trajetoriaGrid}>
         {momentos.map((trajeto) => (
-          <div 
-            key={trajeto.ano} 
+          <div
+            key={trajeto.ano}
             className={styles.card}
             onClick={() => abrirModal(trajeto)}
           >
