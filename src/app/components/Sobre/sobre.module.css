@@ -75,7 +75,7 @@
     right: 12px;
     bottom: 12px;
     border: 2px solid var(--border-hover);
-    border-radius: 16px;
+    border-radius: 20px;
     z-index: 0;
 }
 
@@ -88,6 +88,7 @@
     filter: grayscale(20%);
     width: min(300px, 90vw);
     height: auto;
+    display: block;
 }
 
 .imagem:hover img {
@@ -122,6 +123,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         flex-shrink: 0;
         animation: pulseHint 2.5s ease-in-out 1s 3;
+        background: linear-gradient(145deg, rgba(22, 51, 51, 0.8) 0%, rgba(75, 117, 116, 0.5) 100%);
     }
 
     @keyframes pulseHint {

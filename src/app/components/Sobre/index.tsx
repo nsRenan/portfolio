@@ -2,7 +2,7 @@
 import styles from "./sobre.module.css";
 import { FiChevronsRight } from "react-icons/fi";
 import Image from "next/image";
-import minhaFoto from "/public/imagens/renanPerfil.png";
+import minhaFoto from "/public/imagens/fotoPerfil.jpg";
 import { Habilidades } from "../Habilidades";
 import { useState } from "react";
 
