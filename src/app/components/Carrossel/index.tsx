@@ -65,6 +65,7 @@ const projetos: projetos[] = [
     descricao: "API Sistema Bancário",
     imagem: apiSistemaBancarioFoto,
     github: "https://github.com/nsRenan/api-sistema-bancario",
+    descricaoLonga: "API REST desenvolvida durante um curso intensivo de backend com Node.js. O projeto simula o funcionamento completo de um sistema bancário, contemplando todas as operações essenciais: criação e atualização de contas, depósito, saque, transferência entre contas e consulta de saldo. Construída com JavaScript, Node.js e Express, focando em boas práticas de arquitetura REST e organização de rotas.",
   },
   {
     ferramentas: [
@@ -79,6 +80,7 @@ const projetos: projetos[] = [
     imagem: pontoVendaFoto,
     deploy: "https://pontodevenda.onrender.com/api-docs/",
     github: "https://github.com/nsRenan/pontodevenda",
+    descricaoLonga: "Projeto final do curso intensivo de backend com Node.js, desenvolvido em equipe de 5 pessoas — o que nos rendeu o título de Dream Team, melhor projeto apresentado da turma. O sistema contempla todas as funcionalidades de um ponto de venda real: cadastro de produtos, registro de vendas, envio de e-mail de confirmação ao cliente, controle de estoque e muito mais. Para possibilitar o deploy e facilitar o acesso às rotas sem um frontend dedicado, implementei a documentação interativa via Swagger.",
   },
   {
     ferramentas: [
@@ -89,6 +91,7 @@ const projetos: projetos[] = [
     descricao: "DsList",
     imagem: dsListFoto,
     github: "https://github.com/nsRenan/dslist_frontend",
+    descricaoLonga: "Frontend desenvolvido a pedido de um amigo e colega de faculdade que construiu uma API de recomendações de jogos. Fui responsável por criar a interface que consome essa API, exibindo as listas de jogos e suas recomendações de forma organizada e agradável. O projeto foi construído com JavaScript, React e CSS puro.",
   },
   {
     ferramentas: [
@@ -99,8 +102,8 @@ const projetos: projetos[] = [
     descricao: "Costs",
     imagem: costsFoto,
     github: "https://github.com/nsRenan/projeto-costs-curso-react",
+    descricaoLonga: "Projeto desenvolvido durante um curso de React com o objetivo de colocar em prática os fundamentos da biblioteca. A aplicação é um gerenciador de custos de projetos, onde é possível criar projetos, adicionar serviços com seus respectivos custos e acompanhar o orçamento disponível em tempo real. Construído com JavaScript, React e CSS.",
   },
-
   {
     ferramentas: [
       <SiJavascript key={"javascript"} />,
@@ -110,6 +113,7 @@ const projetos: projetos[] = [
     descricao: "Bilioteca Virtual",
     imagem: bibliotecaFoto,
     github: "https://github.com/PietroRhyan/biblioteca-a3",
+    descricaoLonga: "Projeto acadêmico desenvolvido durante a graduação em Ciências da Computação com o objetivo de obter nota em uma das disciplinas. A aplicação é uma biblioteca virtual de livros de domínio público, permitindo a busca e visualização de obras disponíveis. Desenvolvida com JavaScript, React e CSS.",
   },
   {
     ferramentas: [
@@ -140,7 +144,6 @@ const projetos: projetos[] = [
     ferramentas: [
       <SiTypescript key={"typescript"} />,
       <SiReact key={"react"} />,
-      <SiCss3 key={"css"} />,
       <SiNextdotjs key={"next"} />,
       <SiSwiper key={"swiper"} />,
     ],
@@ -148,6 +151,7 @@ const projetos: projetos[] = [
     imagem: portfolioFoto,
     deploy: "https://nsrenan.com",
     github: "https://github.com/nsRenan/portfolio",
+    descricaoLonga: "Este portfólio — o projeto que você está acessando agora. Desenvolvido do zero com TypeScript, React e Next.js, com o objetivo de apresentar minha trajetória, habilidades e projetos de forma clara e moderna. Conta com modo claro/escuro, layout totalmente responsivo, animações suaves e componentes reutilizáveis.",
   },
 ];
 
