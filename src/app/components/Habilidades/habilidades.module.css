@@ -26,7 +26,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
   gap: clamp(10px, 1.6vw, 16px);
-  max-width: calc(10 * 56px);
   width: 100%;
   margin: 0 auto;
 }
@@ -51,7 +50,7 @@
   .titulo .icones { grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)) !important; }
 }
 
-@media (min-width: 769px) and (max-width: 9968px) {
+@media (min-width: 769px) and (max-width: 968px) {
   .titulo .icones {
     max-width: 560px !important;
     margin: 0 auto;
