@@ -22,6 +22,7 @@ import costsFoto from "/public/imagens/costs.png";
 import bibliotecaFoto from "/public/imagens/biblioteca.png";
 import portfolioFoto from "/public/imagens/portfolio.png";
 import manorderFoto from "/public/imagens/manorder.png";
+import blogPostsFoto from "/public/imagens/blogPots.png";
 
 import {
   SiJavascript,
@@ -37,6 +38,10 @@ import {
   SiSwiper,
   SiEslint,
   SiTailwindcss,
+  SiPhp,
+  SiLaravel,
+  SiAlpinedotjs,
+  SiAxios,
 } from "react-icons/si";
 import { ReactElement, useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
@@ -117,6 +122,19 @@ const projetos: projetos[] = [
     imagem: manorderFoto,
     github: "https://github.com/Manorder",
     descricaoLonga: "SaaS desenvolvido em parceria com um colega de faculdade para gerenciar pedidos e receitas de restaurantes e lanchonetes. A aplicação oferece gerenciamento de pedidos e produtos, controle de um ou mais estabelecimentos pelo mesmo proprietário, dashboard com métricas de receita, relatórios completos e sistema de pagamento automatizado. O frontend foi construído com TypeScript, ReactJS e Next.js, utilizando Shadcn/ui e Radix UI para componentes, React-Hook-Form e Zod para formulários e validação, e Tremor para gráficos. O backend está atualmente em desenvolvimento.",
+  },
+  {
+    ferramentas: [
+      <SiPhp key={"php"} />,
+      <SiLaravel key={"laravel"} />,
+      <SiAlpinedotjs key={"alpine"} />,
+      <SiTailwindcss key={"tailwind"} />,
+      <SiAxios key={"axios"} />,
+    ],
+    descricao: "Blog Posts",
+    imagem: blogPostsFoto,
+    github: "https://github.com/nsRenan/blog-posts-laravel",
+    descricaoLonga: "Projeto desenvolvido para aprofundar o conhecimento em PHP e no ecossistema Laravel. A aplicação é uma plataforma de posts com autenticação completa de usuários, sistema de curtidas, páginas de filtragem por categoria e criação de posts com editor rico. No backend, explorei os recursos do Laravel como Eloquent ORM, migrations, middlewares, validações e policies para controle de permissões. No frontend, utilizei Alpine.js para interatividade reativa sem abrir mão da leveza, Tailwind CSS para estilização moderna e Axios para as requisições assíncronas — entregando uma experiência fluida e responsiva.",
   },
   {
     ferramentas: [
