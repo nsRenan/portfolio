@@ -101,8 +101,32 @@
   font-size: 32px;
   font-weight: 600;
   color: var(--branco);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   letter-spacing: -1px;
+}
+
+.descricaoLonga {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--cinza);
+  margin-bottom: 32px;
+  letter-spacing: 0.2px;
+}
+
+.lerMaisBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--verde);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  margin-left: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.lerMaisBtn:hover {
+  opacity: 0.75;
 }
 
 .ferramentas {

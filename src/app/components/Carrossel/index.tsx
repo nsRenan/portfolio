@@ -21,6 +21,7 @@ import dsListFoto from "/public/imagens/dsList.png";
 import costsFoto from "/public/imagens/costs.png";
 import bibliotecaFoto from "/public/imagens/biblioteca.png";
 import portfolioFoto from "/public/imagens/portfolio.png";
+import manorderFoto from "/public/imagens/manorder.png";
 
 import {
   SiJavascript,
@@ -35,6 +36,7 @@ import {
   SiNextdotjs,
   SiSwiper,
   SiEslint,
+  SiTailwindcss,
 } from "react-icons/si";
 import { ReactElement, useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
@@ -45,6 +47,7 @@ interface projetos {
   imagem: StaticImageData;
   descricao: string;
   ferramentas: ReactElement[];
+  descricaoLonga?: string;
 }
 
 const projetos: projetos[] = [
@@ -102,6 +105,18 @@ const projetos: projetos[] = [
     descricao: "Bilioteca Virtual",
     imagem: bibliotecaFoto,
     github: "https://github.com/PietroRhyan/biblioteca-a3",
+  },
+  {
+    ferramentas: [
+      <SiTypescript key={"typescript"} />,
+      <SiReact key={"react"} />,
+      <SiNextdotjs key={"next"} />,
+      <SiTailwindcss key={"tailwind"} />,
+    ],
+    descricao: "Manorder",
+    imagem: manorderFoto,
+    github: "https://github.com/Manorder",
+    descricaoLonga: "SaaS desenvolvido em parceria com um colega de faculdade para gerenciar pedidos e receitas de restaurantes e lanchonetes. A aplicação oferece gerenciamento de pedidos e produtos, controle de um ou mais estabelecimentos pelo mesmo proprietário, dashboard com métricas de receita, relatórios completos e sistema de pagamento automatizado. O frontend foi construído com TypeScript, ReactJS e Next.js, utilizando Shadcn/ui e Radix UI para componentes, React-Hook-Form e Zod para formulários e validação, e Tremor para gráficos. O backend está atualmente em desenvolvimento.",
   },
   {
     ferramentas: [
@@ -207,6 +222,7 @@ export function Carrossel() {
           ferramentas={projetoSelecionado.ferramentas}
           github={projetoSelecionado.github}
           deploy={projetoSelecionado.deploy}
+          descricaoLonga={projetoSelecionado.descricaoLonga}
         />
       )}
     </div>
