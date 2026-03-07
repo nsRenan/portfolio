@@ -132,28 +132,36 @@
     }
 
     .fotoMiniatura::after {
-        content: '⤢';
+        content: '👆';
         position: absolute;
-        bottom: -3px;
-        right: -3px;
-        width: 16px;
-        height: 16px;
+        bottom: -4px;
+        right: -4px;
+        width: 24px;
+        height: 24px;
         background: var(--verde);
         color: var(--background);
         border-radius: 50%;
-        font-size: 9px;
+        font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
         line-height: 1;
         font-weight: bold;
-        transition: opacity 0.3s ease;
+        transition: all 0.3s ease;
         z-index: 5;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 0 3px rgba(118, 178, 176, 0.3);
+        animation: bounceIcon 1.5s ease-in-out 0.5s 4;
+    }
+
+    @keyframes bounceIcon {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
     }
 
     .fotoMiniatura.expandida::after {
         content: '✕';
-        font-size: 8px;
+        font-size: 12px;
+        animation: none;
     }
 
     .fotoMiniatura img {
