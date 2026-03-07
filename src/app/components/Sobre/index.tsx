@@ -1,6 +1,7 @@
 "use client";
 import styles from "./sobre.module.css";
 import { FiChevronsRight } from "react-icons/fi";
+import { GiClick } from "react-icons/gi";
 import Image from "next/image";
 import minhaFoto from "/public/imagens/RenanPerfil.jpeg";
 import { Habilidades } from "../Habilidades";
@@ -20,6 +21,8 @@ export function Sobre() {
             onMouseLeave={() => setFotoExpandida(false)}
           >
             <Image src={minhaFoto} alt={"Renan Foto"} width={200} height={200} quality={95} />
+            {!fotoExpandida && <GiClick className={styles.iconClick} />}
+            {fotoExpandida && <span className={styles.iconClose}>✕</span>}
           </div>
         </div>
 
