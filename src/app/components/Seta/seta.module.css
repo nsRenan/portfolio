@@ -10,7 +10,6 @@
   color: var(--verde);
   transition: 300ms;
   animation: setaUp 1s linear infinite;
-
 }
 
 .setaBotao:hover {
@@ -24,4 +23,13 @@
     50%{
         transform: translateY(10px)
     }
+}
+
+@media (max-width: 768px) {
+  .setaBotao {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.9;
+  }
 }

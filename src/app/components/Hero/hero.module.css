@@ -145,7 +145,8 @@
 /* Responsivo */
 @media (max-width: 768px) {
   .heroSection {
-    min-height: 90vh;
+    min-height: calc(100vh - 150px);
+    padding-bottom: 40px;
   }
 
   .decorative {
@@ -154,6 +155,11 @@
 }
 
 @media (max-width: 480px) {
+  .heroSection {
+    min-height: calc(100vh - 180px);
+    padding-bottom: 30px;
+  }
+
   .stats {
     flex-direction: column;
     gap: 24px;
