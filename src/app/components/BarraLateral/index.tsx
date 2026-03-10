@@ -4,6 +4,7 @@ import styles from "./barraLateral.module.css";
 import { CgDetailsMore } from "react-icons/cg";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { RiMailSendLine } from "react-icons/ri";
+import { FaWhatsapp } from "react-icons/fa";
 import { ReactElement, useEffect, useState } from "react";
 import { FiBox, FiInfo, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,6 +16,10 @@ interface menu {
   rota: string,
   icon: ReactElement,
 }
+
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = encodeURIComponent('Olá Renan! Vi seu portfólio e gostaria de conversar sobre uma oportunidade profissional.');
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 export const menus: menu[] = [
   {
@@ -208,6 +213,16 @@ export function BarraLateral() {
                       >
                         <SiGithub /> Github
                       </a>
+                      {whatsappNumber && (
+                        <a
+                          className={styles.pagina}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={whatsappUrl}
+                        >
+                          <FaWhatsapp /> WhatsApp
+                        </a>
+                      )}
                     </motion.ul>
                   </div>
                 </div>
