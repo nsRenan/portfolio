@@ -1,6 +1,11 @@
 import styles from './footer.module.css'
 import { SiLinkedin, SiGithub } from 'react-icons/si'
 import { RiMailSendLine } from 'react-icons/ri'
+import { FaWhatsapp } from 'react-icons/fa'
+
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = encodeURIComponent('Olá Renan! Vi seu portfólio e gostaria de conversar sobre uma oportunidade profissional.');
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 export function Footer() {
     return (
@@ -24,6 +29,11 @@ export function Footer() {
               <a href="mailto:contact.renannobre@gmail.com" aria-label="Email">
                 <RiMailSendLine />
               </a>
+              {whatsappNumber && (
+                <a target="_blank" rel="noopener noreferrer" href={whatsappUrl} aria-label="WhatsApp">
+                  <FaWhatsapp />
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -3,10 +3,15 @@ import { Link, animateScroll as scroll, } from "react-scroll/modules";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import styles from "./navbar.module.css";
 import { RiMailSendLine } from "react-icons/ri";
+import { FaWhatsapp } from "react-icons/fa";
 import renanLogo from "/public/renan-logo.svg";
 import Image from "next/image";
 import { BarraLateral } from "../BarraLateral";
 import ThemeToggle from "../ThemeToggle";
+
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = encodeURIComponent('Olá Renan! Vi seu portfólio e gostaria de conversar sobre uma oportunidade profissional.');
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 export function Navbar() {
   const scrollToTop = () => {
@@ -57,11 +62,16 @@ export function Navbar() {
       <div className={styles.menuBotoes}>
         <ThemeToggle />
         <a target="_blank" href="https://www.linkedin.com/in/renan-nobre/">
-          <SiLinkedin /> Linkedin
+          <SiLinkedin /> <span className={styles.linkLabel}>Linkedin</span>
         </a>
         <a target="_blank" href="https://github.com/nsRenan">
-          <SiGithub /> Github
+          <SiGithub /> <span className={styles.linkLabel}>Github</span>
         </a>
+        {whatsappNumber && (
+          <a target="_blank" rel="noopener noreferrer" href={whatsappUrl}>
+            <FaWhatsapp /> <span className={styles.linkLabel}>WhatsApp</span>
+          </a>
+        )}
         <Link
           to="contato"
           spy={true}

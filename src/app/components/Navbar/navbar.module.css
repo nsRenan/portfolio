@@ -123,7 +123,25 @@
   box-shadow: 0 4px 12px rgba(118, 178, 176, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .linkLabel {
+    display: none;
+  }
+
+  .menuBotoes {
+    gap: 8px;
+  }
+
+  .menuBotoes > a {
+    padding: 8px;
+  }
+
+  .contato {
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 767px) {
   .menu {
     display: none;
   }

@@ -3,10 +3,14 @@
 import { useState, FormEvent } from 'react';
 import styles from './contato.module.css';
 import { RiMailSendLine } from 'react-icons/ri';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export function Contato() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  const whatsappMessage = encodeURIComponent('Olá Renan! Vi seu portfólio e gostaria de conversar sobre uma oportunidade profissional.');
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,6 +54,18 @@ export function Contato() {
         <p className={styles.subtitle}>
           Tem algum projeto em mente? Vamos conversar!
         </p>
+
+        {whatsappNumber && (
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whatsappButton}
+          >
+            <FaWhatsapp />
+            Chamar no WhatsApp
+          </a>
+        )}
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formGroup}>

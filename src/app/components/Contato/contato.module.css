@@ -45,9 +45,36 @@
 .subtitle {
   color: var(--cinza);
   font-size: clamp(14px, 1.5vw, 15px);
-  margin-bottom: clamp(36px, 4.8vw, 48px);
+  margin-bottom: clamp(24px, 3vw, 32px);
   line-height: 1.6;
   padding-left: clamp(12px, 1.5vw, 20px);
+}
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(37, 211, 102, 0.08);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 8px;
+  color: #25d366;
+  font-size: clamp(14px, 1.5vw, 15px);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: clamp(24px, 3vw, 32px);
+}
+
+.whatsappButton svg {
+  font-size: 20px;
+}
+
+.whatsappButton:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25d366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
 }
 
 .form {
